@@ -1,18 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>Pokémon</h1>
+  </header><br>
+
+  <p>Preparate para la batalla eligiendo a tu mejor POKÉMON</p>
+
+
+  <section>
+    <div>
+      <input type="text" id="login" placeholder="Ingresa tu Nombre"><br><br>
+      <img src="../src/img/f2f1125ced1e02d392484d7b1a766bc9--pokemon-pokemon-pikachu.jpg" id="foto">
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <h4 id="id_user"> </h4>
+      <!--Aquí irian las fotos de cada uno de los pokemones-->
+      <button type="button" id="btn"><strong>Estadísticas</strong></button>
+      <button type="button" id="btn"><strong>Filtrar</strong></button>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <!--Aquí irian la comparativa-->
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <!--Aquí irian las estadísticas-->
+    </div>
+  </section>
+
+
+  <div id="root"></div>
+
+
+  <script src="./data/pokemon/pokemon.js"></script>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
