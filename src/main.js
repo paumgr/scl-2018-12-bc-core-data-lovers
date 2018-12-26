@@ -16,18 +16,15 @@ window.onload = () => {
         divPokemonGrid.setAttribute('id','divPokemon');
         divPokemonGrid.classList.add("grid_container");
 
-        let img = [];
-        // document.getElementById('divPokemonGrid').innerHTML = '';
-        for (let i = 0 ; i < arrayShowWhole.length ; i++){
-            // console.log (arrayShowWhole);
-            img.push(arrayShowWhole[i].img);
-
+        arrayShowWhole.forEach(element => {
             const divImgPoke = document.createElement('div');
             let imgElementPoke = document.createElement('img');
-            imgElementPoke.setAttribute('src',img[i]);
+            imgElementPoke.setAttribute('src',element.img);
             divPokemonGrid.appendChild(divImgPoke);
             divImgPoke.appendChild(imgElementPoke);            
-        }
+        });
+
+
 
     });
 
