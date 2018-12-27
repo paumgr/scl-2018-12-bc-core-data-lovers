@@ -10,7 +10,7 @@
 
 // window.example = example;
 
-const searchFor = (pokeId) => {
+const searchForID = (pokeId) => {
   let arrayPokeID = POKEMON["pokemon"][pokeId];
   return arrayPokeID;
 }
@@ -20,6 +20,18 @@ const wholePokes = () => {
   return arrayCompletePoke;
 }
 
+const typePoke = () => {
+  let pokeType = [];
+  POKEMON.pokemon.forEach(element => {
+    pokeType.push(element.type);
+  });
+
+  // pokeType = pokeType.filter(function(item,index,inputArray){
+  //   return inputArray.indexOf(item) == index;
+  // });
+  return pokeType;
+  
+}
 //Filtrados, esto creará un nuevo arreglo "newNumbers", y guardo todos los elementos del arreglo que estoy
 //buscando, cuando se cumpla la condición, en este caso, cuando sean pares.
 /* const numbers = [1,2,3,4,5];

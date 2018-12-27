@@ -48,30 +48,21 @@ figure{
 }
 
 .button-search {
-  margin-right: -100%;
-  width: 12.95%;
-  margin-left: 79.8025%;
   background-image: url(../src/img/search.png);
   background-position: center;
   background-repeat: no-repeat;
   background-color: #ee6b2f;
-  color: #fff;
   clear: none;
   height: 48px;
+  width: 48px;
   border: none;
+  border-radius: 5px;
+  margin: 1.5%;
   text-align: center;
   cursor: pointer;
-  border-radius: 5px;
-  line-height: 125%;
-  margin: 1.5625%;
-  padding: 0.75em 1.25em 0.675em;
   vertical-align: middle;
-  align-items: flex-start;
   box-sizing: border-box;
-  user-select: none;
-  white-space: pre;
   display: inline-block;
-  
 }
 
 
