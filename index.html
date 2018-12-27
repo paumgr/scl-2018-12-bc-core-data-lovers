@@ -4,15 +4,20 @@
 <head>
   <meta charset="utf-8">
   <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css " />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
   <header>
+    <div class = "container">
     <h1>Pokémon</h1>
+  </div>
   </header><br>
-  <p>Preparate para la batalla eligiendo a tu mejor POKÉMON</p>
-
+  
+  <div class="container">
+    <p>Preparate para la batalla eligiendo a tu mejor POKÉMON</p>
   <section>
     <div id="user">
       <input type="text" id="login" placeholder="Ingresa tu Nombre"><br><br>
@@ -23,10 +28,8 @@
     </div>
   </section>
 
-  <section>
-    <div id="containmentPokes">
-      <!--Aquí irian las fotos de cada uno de los pokemones-->
-    </div>
+  <section id="containmentPokes">
+      <!--Aquí van las fotos de cada uno de los pokemones-->
   </section>
 
   <section>
@@ -43,12 +46,14 @@
 
 
   <div id="root"></div>
-
+</div>
 
   <script src="./data/pokemon/pokemon.js"></script>
 
   <script src="data.js"></script>
   <script src="main.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js">  </script>
 </body>
 
 </html>
