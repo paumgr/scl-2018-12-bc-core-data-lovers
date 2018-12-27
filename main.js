@@ -1,9 +1,10 @@
 window.onload = () => {
-    let arrayShowWhole = wholePokes();   
+    let arrayShowWhole = wholePokes();  
+    console.log('tipos de pokemon ' + typePoke());
 
     let user = document.getElementById('user');
     const containment = document.getElementById('containmentPokes');
-    containment.classList.add("container");
+    containment.classList.add('container');
 
     //Ingreso con botón Aceptar
     document.getElementById('btn_enter').addEventListener('click',(event) => {
@@ -14,13 +15,14 @@ window.onload = () => {
         //Creo Section de buscar y filtrar
         const sectionSearch = document.createElement('section');
         containment.appendChild(sectionSearch);
-        //sectionSearch.classList.add('container');
-        //Creo div de buscar
+        sectionSearch.classList.add('row','pokedex-filter');
+
+        //DIV buscar
         const divSearch = document.createElement('div');
         sectionSearch.appendChild(divSearch);
-        divSearch.classList.add('pokedex-filter','col-6','push-1');
+        divSearch.setAttribute('id','search-div');
+        divSearch.classList.add('col-xs-12', 'col-sm-10', 'col-md-5', 'col-lg-5');
         
-
         const labelSearch = document.createElement('label');
         const searchText = document.createTextNode('Nombre o Número ');
         const elementSearch = document.createElement('input');
@@ -37,11 +39,24 @@ window.onload = () => {
         buttonSearch.setAttribute('id','search');
         buttonSearch.classList.add('button','button-search');
 
+        //DIV y SPAN para el 'O' de selección
+        const divMiddleText = document.createElement('div');
+        const spanMiddleText = document.createElement('span');
+        const labelMiddleText = document.createElement('label');
+        const textOrMiddleText = document.createTextNode('O');
+        sectionSearch.appendChild(divMiddleText);
+        divMiddleText.appendChild(spanMiddleText);
+        spanMiddleText.appendChild(labelMiddleText);
+        labelMiddleText.appendChild(textOrMiddleText);
+        divMiddleText.setAttribute('id','middle-text');
+        divMiddleText.classList.add('col-xs-12', 'col-sm-2', 'col-md-1', 'col-lg-2');
+
         //Creo DIV de Filtrar
         const divFilter = document.createElement('div');
         sectionSearch.appendChild(divFilter);
-        divFilter.classList.add('pokedex-filter');
-
+        divFilter.setAttribute('id','filter-div');
+        divFilter.classList.add('col-xs-12', 'col-sm-12', 'col-md-6', 'col-lg-5');
+        
 
 
 
@@ -51,7 +66,7 @@ window.onload = () => {
         containment.appendChild(ulPokemonGrid);
         ulPokemonGrid.setAttribute('id','ulPokemon');
         ulPokemonGrid.setAttribute('style','height:auto');
-        ulPokemonGrid.classList.add("main");
+        ulPokemonGrid.classList.add('main');
 
         arrayShowWhole.forEach(element => {
             const liResultPoke = document.createElement('li');
@@ -62,11 +77,11 @@ window.onload = () => {
             liResultPoke.appendChild(figureElement);
             figureElement.appendChild(imgElementPoke);    
             imgElementPoke.setAttribute('src',element.img);
-            liResultPoke.classList.add("animating", "col-xs-12", "col-sm-6", "col-md-4", "col-lg-3");
+            liResultPoke.classList.add('col-xs-12', 'col-sm-6', 'col-md-4', 'col-lg-3');
             //Creo el elemento Label para asignar el nombre y codigo de cada Pokemon al DIV
             const divInfoPokemon = document.createElement('div');
             liResultPoke.appendChild(divInfoPokemon);
-            divInfoPokemon.classList.add("pokemon-info");
+            divInfoPokemon.classList.add('pokemon-info');
             //Creo el parrafo para agregar el id
             const pIdPoke = document.createElement('p');
             const spanIdPoke = document.createElement('span');
