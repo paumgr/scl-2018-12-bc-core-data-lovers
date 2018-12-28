@@ -21,17 +21,28 @@ const wholePokes = () => {
 }
 
 const typePoke = () => {
-  let pokeType = [];
-  POKEMON.pokemon.forEach(element => {
-    pokeType.push(element.type);
-  });
+  // function onlyUnique(value,index,self){
+  //   return self.indexOf(value) === index;
+  // }
+  let pokeTypeAll = POKEMON.pokemon
+  .map(element => element.type)
+  // .filter(onlyUnique)
 
-  // pokeType = pokeType.filter(function(item,index,inputArray){
-  //   return inputArray.indexOf(item) == index;
-  // });
-  return pokeType;
+  let cadaTipo = [];
+  let individual = [];
   
+  for (let i = 0; i < pokeTypeAll.length; i++ ){
+      cadaTipo.push(pokeTypeAll[i]);
+      for (let j = 0; j < cadaTipo.length; j++ ){
+          if (individual.indexOf(cadaTipo[i][j])=== -1) {
+              individual.push(cadaTipo[i][j]);
+          }
+      }  
+  }
+  return individual;
 }
+
+
 //Filtrados, esto creará un nuevo arreglo "newNumbers", y guardo todos los elementos del arreglo que estoy
 //buscando, cuando se cumpla la condición, en este caso, cuando sean pares.
 /* const numbers = [1,2,3,4,5];
