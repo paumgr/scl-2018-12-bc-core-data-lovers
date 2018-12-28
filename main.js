@@ -1,6 +1,8 @@
 window.onload = () => {
     let arrayShowWhole = wholePokes();  
-    console.log('tipos de pokemon ' + typePoke());
+    console.log(typePoke());
+
+//Tengo que meterme dentro de la posicion dentro del array que voy a revisar
 
     let user = document.getElementById('user');
     const containment = document.getElementById('containmentPokes');
