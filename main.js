@@ -1,8 +1,5 @@
 window.onload = () => {
-    let arrayShowWhole = wholePokes();  
-    console.log(typePoke());
-
-//Tengo que meterme dentro de la posicion dentro del array que voy a revisar
+    let arrayShowWhole = wholePokes(); 
 
     let user = document.getElementById('user');
     const containment = document.getElementById('containmentPokes');
@@ -23,8 +20,8 @@ window.onload = () => {
         const divSearch = document.createElement('div');
         sectionSearch.appendChild(divSearch);
         divSearch.setAttribute('id','search-div');
-        divSearch.classList.add('col-xs-12', 'col-sm-10', 'col-md-5', 'col-lg-5');
-        
+        divSearch.classList.add('col-xs-12', 'col-sm-10', 'col-md-5', 'col-lg-5','searchDIV');
+
         const labelSearch = document.createElement('label');
         const searchText = document.createTextNode('Nombre o Número ');
         const elementSearch = document.createElement('input');
@@ -51,17 +48,36 @@ window.onload = () => {
         spanMiddleText.appendChild(labelMiddleText);
         labelMiddleText.appendChild(textOrMiddleText);
         divMiddleText.setAttribute('id','middle-text');
-        divMiddleText.classList.add('col-xs-12', 'col-sm-2', 'col-md-1', 'col-lg-2');
+        divMiddleText.classList.add('col-xs-12', 'col-sm-2', 'col-md-1', 'col-lg-2', 'searchDIV');
 
         //Creo DIV de Filtrar
         const divFilter = document.createElement('div');
         sectionSearch.appendChild(divFilter);
         divFilter.setAttribute('id','filter-div');
-        divFilter.classList.add('col-xs-12', 'col-sm-12', 'col-md-6', 'col-lg-5');
-        
-
-
-
+        divFilter.classList.add('col-xs-12', 'col-sm-12', 'col-md-6', 'col-lg-5','filterColumnDIV');
+        //Creo contenedor de lisado de Tipos de Pokemon
+        const ulPokeType = document.createElement('ul');
+        divFilter.appendChild(ulPokeType);
+        ulPokeType.setAttribute('id','ulTipoPokemon');
+        ulPokeType.classList.add('ulFilterList');
+        typePoke().forEach(element => {
+            const liPokeType = document.createElement('li');
+            const spanPokeType = document.createElement('span');
+            const spanSelectPokeType = document.createElement('span');
+            const inputPokeType = document.createElement('input');
+            if (element !== undefined){
+            let typePoke = document.createTextNode(element); 
+            ulPokeType.appendChild(liPokeType);
+            liPokeType.appendChild(spanPokeType);
+            spanPokeType.appendChild(typePoke);
+            liPokeType.appendChild(spanSelectPokeType);
+            spanSelectPokeType.appendChild(inputPokeType);
+            inputPokeType.setAttribute('type','checkbox');
+            inputPokeType.setAttribute('id','switch');
+            spanPokeType.classList.add('pill');
+            spanSelectPokeType.classList.add('spanSelectType');
+        }
+        });
 
         //Creo contenedor del listado de Pokes
         const ulPokemonGrid = document.createElement('ul');
@@ -83,14 +99,19 @@ window.onload = () => {
             //Creo el elemento Label para asignar el nombre y codigo de cada Pokemon al DIV
             const divInfoPokemon = document.createElement('div');
             liResultPoke.appendChild(divInfoPokemon);
-            divInfoPokemon.classList.add('pokemon-info');
             //Creo el parrafo para agregar el id
             const pIdPoke = document.createElement('p');
             const spanIdPoke = document.createElement('span');
-            let idTextPoke = document.createTextNode('# ' + element.num);
-            pIdPoke.appendChild(spanIdPoke);
-            spanIdPoke.appendChild(idTextPoke);
+            let idTextPoke = document.createTextNode(element.num);
+            const prefixPoke = document.createTextNode('#');
             divInfoPokemon.appendChild(pIdPoke);
+            pIdPoke.appendChild(spanIdPoke);
+            spanIdPoke.appendChild(prefixPoke);
+            pIdPoke.appendChild(idTextPoke);
+            pIdPoke.classList.add('id');
+            
+            
+            
             //Creo un H5 para el nombre
             const hFiveName = document.createElement('h5');
             let nombreTextPoke = document.createTextNode(element.name);
