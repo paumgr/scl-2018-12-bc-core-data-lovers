@@ -12,26 +12,42 @@
 <body>
   <header>
     <div class = "container">
-    <h1>Pokémon</h1>
-  </div>
-  </header><br>
+      <h1 class = "title">Pokémon</h1>
+      <p>Preparate para la batalla eligiendo a tu mejor POKÉMON</p>
+    </div>
+  </header>
   
   <div class="container">
-    <p>Preparate para la batalla eligiendo a tu mejor POKÉMON</p>
   
     <!--Usuario-->
-    <section>
-    <div id="user">
+    <section class="section-user">
+    <div class= "user" id="user">
       <input type="text" id="login" placeholder="Ingresa tu Nombre"><br><br>
       <img src="../src/img/f2f1125ced1e02d392484d7b1a766bc9--pokemon-pokemon-pikachu.jpg" id="foto">
-      <h4 id="id_user"> </h4>
-      <button type="button" id="btn_enter"><strong>Ingresar</strong></button>
+      <button type="button" class = "btn btn-primary" id="btn_enter"><strong>Ingresar</strong></button>
     </div>
     </section>
 
     <section id="containmentPokes">
       <!--Aquí van las fotos de cada uno de los pokemones-->
     </section>
+r
+  </div>
+  <div>
+    <section>
+      <div>
+        <!--Aquí irian la comparativa-->
+      </div>
+    </section>
+  </div>
+  <div>
+    <section>
+      <div>
+        <!--Aquí irian las estadísticas-->
+      </div>
+    </section>
+  </div>
+
 
   <section>
     <div>
@@ -46,8 +62,8 @@
   </section>
 
 
+
   <div id="root"></div>
-</div>
 
   <script src="./data/pokemon/pokemon.js"></script>
 
