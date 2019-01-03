@@ -78,6 +78,13 @@ window.onload = () => {
             spanSelectPokeType.classList.add('spanSelectType');
         }
         });
+        const buttonFilter = document.createElement('button');
+        const buttonInput = document.createTextNode('Filtrar');
+        divFilter.appendChild(buttonFilter);
+        buttonFilter.appendChild(buttonInput);
+        buttonFilter.setAttribute('id','filterButton');
+        buttonFilter.classList.add('btn');
+        
 
         //Creo contenedor del listado de Pokes
         const ulPokemonGrid = document.createElement('ul');
@@ -89,13 +96,16 @@ window.onload = () => {
         arrayShowWhole.forEach(element => {
             const liResultPoke = document.createElement('li');
             //Creo el elemento imagen y lo asigno a LI
+            const spanImagePoke = document.createElement('span');
             const figureElement = document.createElement('figure');
             let imgElementPoke = document.createElement('img');
             ulPokemonGrid.appendChild(liResultPoke);
-            liResultPoke.appendChild(figureElement);
+            liResultPoke.appendChild(spanImagePoke);
+            spanImagePoke.appendChild(figureElement);
             figureElement.appendChild(imgElementPoke);    
             imgElementPoke.setAttribute('src',element.img);
             liResultPoke.classList.add('col-xs-12', 'col-sm-6', 'col-md-4', 'col-lg-3');
+            spanImagePoke.classList.add('span-image');
             //Creo el elemento Label para asignar el nombre y codigo de cada Pokemon al DIV
             const divInfoPokemon = document.createElement('div');
             liResultPoke.appendChild(divInfoPokemon);
