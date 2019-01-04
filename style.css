@@ -1,7 +1,5 @@
 #foto{
-    height: 50px;
-    width: 50px;
-    margin:10px;
+    width: 100px;
 }
 
 input[type=checkbox]{
@@ -239,4 +237,27 @@ header .container p{
   float:left;
   position: relative;
   margin: 1em 0 0 0;
+}
+
+.paragraph{
+    font-family: Sans-serif;
+}
+
+img{
+  width: 65%;
+}
+
+body{
+  background: -webkit-linear-gradient(90deg, #fef882 10%, #f4a62a 70%);
+}
+
+#foto{
+  float: left 50% ;
+}
+
+#login{
+  width: 20%;
+  height: 50%;
+  background-color: #cae2e5;
+  border-radius: 10px;
 }
