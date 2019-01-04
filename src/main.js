@@ -54,12 +54,12 @@ window.onload = () => {
         const divFilter = document.createElement('div');
         sectionSearch.appendChild(divFilter);
         divFilter.setAttribute('id','filter-div');
-        divFilter.classList.add('col-xs-12', 'col-sm-12', 'col-md-6', 'col-lg-5','filterColumnDIV');
+        divFilter.classList.add('col-xs-12', 'col-sm-12', 'col-md-6', 'col-lg-5','filter-column-div');
         //Creo contenedor de lisado de Tipos de Pokemon
         const ulPokeType = document.createElement('ul');
         divFilter.appendChild(ulPokeType);
         ulPokeType.setAttribute('id','ulTipoPokemon');
-        ulPokeType.classList.add('ulFilterList');
+        ulPokeType.classList.add('ul-filter-list');
         typePoke().forEach(element => {
             const liPokeType = document.createElement('li');
             const spanPokeType = document.createElement('span');
@@ -74,8 +74,9 @@ window.onload = () => {
             spanSelectPokeType.appendChild(inputPokeType);
             inputPokeType.setAttribute('type','checkbox');
             inputPokeType.setAttribute('id','switch');
+            inputPokeType.setAttribute('value',element);
             spanPokeType.classList.add('pill');
-            spanSelectPokeType.classList.add('spanSelectType');
+            spanSelectPokeType.classList.add('span-select-type');
         }
         });
         const buttonFilter = document.createElement('button');
@@ -85,7 +86,6 @@ window.onload = () => {
         buttonFilter.setAttribute('id','filterButton');
         buttonFilter.classList.add('btn');
         
-
         //Creo contenedor del listado de Pokes
         const ulPokemonGrid = document.createElement('ul');
         containment.appendChild(ulPokemonGrid);
@@ -96,16 +96,13 @@ window.onload = () => {
         arrayShowWhole.forEach(element => {
             const liResultPoke = document.createElement('li');
             //Creo el elemento imagen y lo asigno a LI
-            const spanImagePoke = document.createElement('span');
             const figureElement = document.createElement('figure');
             let imgElementPoke = document.createElement('img');
             ulPokemonGrid.appendChild(liResultPoke);
-            liResultPoke.appendChild(spanImagePoke);
-            spanImagePoke.appendChild(figureElement);
+            liResultPoke.appendChild(figureElement);
             figureElement.appendChild(imgElementPoke);    
             imgElementPoke.setAttribute('src',element.img);
             liResultPoke.classList.add('col-xs-12', 'col-sm-6', 'col-md-4', 'col-lg-3');
-            spanImagePoke.classList.add('span-image');
             //Creo el elemento Label para asignar el nombre y codigo de cada Pokemon al DIV
             const divInfoPokemon = document.createElement('div');
             liResultPoke.appendChild(divInfoPokemon);
@@ -120,29 +117,11 @@ window.onload = () => {
             pIdPoke.appendChild(idTextPoke);
             pIdPoke.classList.add('id');
             
-            
-            
             //Creo un H5 para el nombre
             const hFiveName = document.createElement('h5');
             let nombreTextPoke = document.createTextNode(element.name);
             divInfoPokemon.appendChild(hFiveName);
             hFiveName.appendChild(nombreTextPoke);
         });
-
-
-
     });
-
-    // const elementLabelZero = document.createElement('label');
-    //     const elementNick = document.createElement('input');
-    //     let labelZeroText = document.createTextNode('Nombre: ');
-    //     elementLabelZero.appendChild(labelZeroText);
-    //     elementLabelZero.appendChild(elementNick);
-    //     containmentStudent.appendChild(elementLabelZero);
-    //     elementNick.setAttribute('placeholder','Nick Name');
-    //     elementNick.setAttribute('id','nameStudent');
-    //     elementNick.classList.add('text');
-
-
-
 }

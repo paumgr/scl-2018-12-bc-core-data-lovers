@@ -186,6 +186,7 @@ header .container p{
   color: #fff;
   margin: 10px;
 }
+
 .colors{
   background: green;
 }
@@ -198,7 +199,6 @@ header .container p{
   border-width: 1px 0 0 0;
   overflow: hidden;
   width: 100%;
-  /* height: 150px; */
   display: flex;
 }
 
@@ -207,11 +207,11 @@ header .container p{
   border-radius: 5px;
   line-height: 28px;
   width: 50%;
-  background: #f39c12;
+  background: #bada55;
   margin: 2.5px;
   text-align: center;
 }
-.spanSelectType{
+.span-select-type{
   align-content: center;
   justify-content: center;
   display: flex;
@@ -219,7 +219,7 @@ header .container p{
   margin-left: 5px;
 }
 
-.ulFilterList{
+.ul-filter-list{
   float: left;
   width: 100%;
   columns:2;
@@ -229,7 +229,7 @@ header .container p{
   vertical-align: baseline;
 }
 
-.filterColumnDIV{
+.filter-column-div{
   clear: both;
   justify-content: space-between;
   align-content: center;

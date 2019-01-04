@@ -49,7 +49,6 @@ const filterPokeType = (typePoke) => {
   });
   //console.log(tipo);
   };
-
     
 //Filtrados, esto creará un nuevo arreglo "newNumbers", y guardo todos los elementos del arreglo que estoy
 //buscando, cuando se cumpla la condición, en este caso, cuando sean pares.
@@ -58,7 +57,7 @@ const filterPokeType = (typePoke) => {
 const newNumbres = numbers.filter((element) => {
   return element % 2 === 0 ;
 }) */
-}
+
 
 const comparar = (pokeOne,pokeTwo) => {
   //debe traer el id del pokemon a buscar
