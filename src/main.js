@@ -57,11 +57,85 @@ window.onload = () => {
         <div class = "container">
             <div class="card">
                 <div class="box">
-
+            <section id="containmentPokes" class="containment">
+                <div id = "found">
                 </div>
-            </div>
-        </div>`
+                <div id = "middle">
+                </div>
+                <div id = "box-filter-order">
+                <div id = "filter">
+                </div>
+                <div id = "order">
+                </div>
+                </div>
+            </section>
+        </article> `
+        //Aquí van las tarjetas de Pokes-->
+        const showData = (POKEMON) => {
+            let result = '';
+            //console.log(POKÉMON)
+            POKEMON.forEach(element => {
+                // element --> POKEMON[i]
+                //console.log(element.house);
+                if (element.num === '' && element.type === '') {
+                    rootContainment.innerHTML += `
+                <div>
+                  <div class="card">
+                    <div class="box">
+                        <div class="img">
+                           <img src=" ${element.image} ">
+                        </div>
+                      <h2> ${element.name}<br><span>nose</span> </h2>
+                        <p>No Aplica</p>
+                    </div>
+                  </div>
+                </div>`
+                }else if (element.num !== "" & element.type === "") {
+                    rootContainment.innerHTML += `
+                <div>
+                  <div class="card">
+                    <div class="box">
+                        <div class="img">
+                           <img src=" ${element.image} ">
+                        </div>
+                      <h2> ${element.name}<br><span> ${element.num}</span> </h2>
+                        <p>Type: No Aplica</p>
+                    </div>
+                  </div>
+                </div>`
+                }else if (element.num === "" & element.type !== "") {
+                    rootContainment.innerHTML += `
+                <div>
+                  <div class="card">
+                    <div class="box">
+                        <div class="img">
+                           <img src=" ${element.image} ">
+                        </div>
+                      <h2> ${element.name}<br><span>No aplica</span> </h2>
+                        <p> ${element.type}</p>
+                    </div>
+                  </div>
+                </div>`
+                }else {
+                    result = rootContainment.innerHTML += `
+                <div>
+                  <div class="card">
+                    <div class="box">
+                        <div class="img">
+                           <img src=" ${element.image} ">
+                        </div>
+                      <h2> ${element.name}<br><span> ${element.num}</span> </h2>
+                        <p>Type: ${element.type}</p>
+                    </div>
+                  </div>
+                </div>`
+                }
+            });
+            return result;
+        } 
+
     });
+ //window.onload = showData(POKEMON);
 
 
         
@@ -104,4 +178,6 @@ window.onload = () => {
         //     hFiveName.appendChild(nombreTextPoke);
         // });
     //});    
-}
+    }
+
+
