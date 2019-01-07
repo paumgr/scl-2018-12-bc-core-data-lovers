@@ -189,26 +189,28 @@ header .container p{
 }
 
 .pokedex-filter {
-  clear: both;
-  background: #bbbbbba8;
+  /*clear: both;*/
+  /*background: #bbbbbba8;*/
+  background-color: #919191;
   border-color: #212121;
   border-style: solid;
-  border-radius: 5%;
-  overflow: hidden;
+  border-radius: 10%;
+  /*overflow: hidden;*/
   width: 100%;
   /* height: 150px; */
   display: flex;
 }
 
 .pill {
-  border: 2px solid #a4a4a4;
-  border-radius: 5px;
+  /*border: 2px solid #a4a4a4;
+  border-radius: 5px;*/
   line-height: 28px;
   width: 50%;
-  background: #f39c12;
+  /*background: #f39c12;*/
   margin: 2.5px;
-  text-align: center;
+  text-align: center;  
 }
+
 .spanSelectType{
   align-content: center;
   justify-content: center;
@@ -248,11 +250,12 @@ img{
 }
 
 .bodys{
-  background: -webkit-linear-gradient(100deg, #fef882 10%, #f5cea3 70%);
-  /*background-image: url("img/pokemones.jpg");
+  /*background: -webkit-linear-gradient(100deg, #fef882 10%, #f5cea3 70%);*/
+  background-image: url("img/pokemones.png");
   background-size: 100%;
   background-repeat: no-repeat;
-  backdrop-filter: 50%;*/
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 
