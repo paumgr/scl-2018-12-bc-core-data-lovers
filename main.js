@@ -78,7 +78,7 @@ window.onload = () => {
             spanSelectPokeType.appendChild(inputPokeType);
             inputPokeType.setAttribute('type','checkbox');
             inputPokeType.setAttribute('id','switch');
-            spanPokeType.classList.add('pill');
+            //spanPokeType.classList.add('pill');
             spanSelectPokeType.classList.add('spanSelectType');
         }
         });
