@@ -207,20 +207,12 @@ header .container p{
   border-radius: 5px;*/
   line-height: 28px;
   width: 50%;
-<<<<<<< HEAD
-  background: #bada55;
-=======
   /*background: #f39c12;*/
->>>>>>> ea0fce15bfc9b0a0fd76a3b47dcf4bc002e42b05
   margin: 2.5px;
   text-align: center;  
 }
-<<<<<<< HEAD
-.span-select-type{
-=======
 
 .spanSelectType{
->>>>>>> ea0fce15bfc9b0a0fd76a3b47dcf4bc002e42b05
   align-content: center;
   justify-content: center;
   display: flex;
@@ -278,8 +270,4 @@ img{
   height: 50%;
   background-color: #cae2e5;
   border-radius: 10px;
-<<<<<<< HEAD
-}
-=======
 }*/
->>>>>>> ea0fce15bfc9b0a0fd76a3b47dcf4bc002e42b05
