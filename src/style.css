@@ -184,6 +184,7 @@ header .container p{
   color: #fff;
   margin: 10px;
 }
+
 .colors{
   background: green;
 }
@@ -197,7 +198,6 @@ header .container p{
   border-radius: 10%;
   /*overflow: hidden;*/
   width: 100%;
-  /* height: 150px; */
   display: flex;
   font-family: Sans-serif;
 }
@@ -207,12 +207,20 @@ header .container p{
   border-radius: 5px;*/
   line-height: 28px;
   width: 50%;
+<<<<<<< HEAD
+  background: #bada55;
+=======
   /*background: #f39c12;*/
+>>>>>>> ea0fce15bfc9b0a0fd76a3b47dcf4bc002e42b05
   margin: 2.5px;
   text-align: center;  
 }
+<<<<<<< HEAD
+.span-select-type{
+=======
 
 .spanSelectType{
+>>>>>>> ea0fce15bfc9b0a0fd76a3b47dcf4bc002e42b05
   align-content: center;
   justify-content: center;
   display: flex;
@@ -220,7 +228,7 @@ header .container p{
   margin-left: 10px;
 }
 
-.ulFilterList{
+.ul-filter-list{
   float: left;
   width: 100%;
   columns:2;
@@ -230,7 +238,7 @@ header .container p{
   vertical-align: baseline;
 }
 
-.filterColumnDIV{
+.filter-column-div{
   clear: both;
   justify-content: space-between;
   align-content: center;
@@ -270,4 +278,8 @@ img{
   height: 50%;
   background-color: #cae2e5;
   border-radius: 10px;
+<<<<<<< HEAD
+}
+=======
 }*/
+>>>>>>> ea0fce15bfc9b0a0fd76a3b47dcf4bc002e42b05
