@@ -47,6 +47,7 @@ const filterPokeType = (typePoke) => {
   const tipo = pokeType.filter((element) => {
       return element.type[0] === typePoke || element.type[1] === typePoke;    
   });
+  return tipo;
   //console.log(tipo);
   };
     
