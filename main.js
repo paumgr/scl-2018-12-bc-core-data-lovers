@@ -1,5 +1,8 @@
 window.onload = () => {
+    let filterPokes = [];
     let arrayShowWhole = wholePokes(); 
+
+    filterPokeType('Fire');
 
     let user = document.getElementById('user');
     const containment = document.getElementById('containmentPokes');
@@ -58,7 +61,7 @@ window.onload = () => {
         //Creo contenedor de lisado de Tipos de Pokemon
         const ulPokeType = document.createElement('ul');
         divFilter.appendChild(ulPokeType);
-        ulPokeType.setAttribute('id','ulTipoPokemon');
+        ulPokeType.setAttribute('id','ul-poke-type');
         ulPokeType.classList.add('ul-filter-list');
         typePoke().forEach(element => {
             const liPokeType = document.createElement('li');
@@ -77,6 +80,7 @@ window.onload = () => {
             inputPokeType.setAttribute('value',element);
             spanPokeType.classList.add('pill');
             spanSelectPokeType.classList.add('span-select-type');
+            spanSelectPokeType.setAttribute('id','span-checked-poke')
         }
         });
         const buttonFilter = document.createElement('button');
@@ -86,6 +90,62 @@ window.onload = () => {
         buttonFilter.setAttribute('id','filterButton');
         buttonFilter.classList.add('btn');
         
+        let checkbox = document.getElementById('switch');
+        checkbox.addEventListener("change", validaCheckbox, false);
+
+        function validaCheckbox(){
+        let checked = checkbox.checked;
+        if(checked){
+            alert('checkbox esta seleccionado');
+        }
+        }
+
+
+
+
+
+        
+
+        /* document.getElementById('switch').addEventListener('click',(event) => {
+            event.preventDefault();    
+
+            if (document.getElementById('switch').checked){
+                let valueChecked = document.getElementById('switch').value;
+                console.log(valueChecked);
+            }
+
+            
+        }); */
+
+        
+
+        // document.getElementById('filterButton').addEventListener('checked',(event) => {
+        //     event.preventDefault();
+            // let checkboxes = document.getElementById('switch').value;
+            // let cont = 0;
+            // console.log('checks '  + checkboxes);
+            // for (let i = 0; i < checkboxes.length; i++) {
+            //     if (checkboxes[i].checked) {
+            //         cont = cont + 1;
+            //     }
+            // }
+            // console.log(cont);
+
+
+        
+        // });
+        
+
+
+
+
+
+
+
+
+
+
+
         //Creo contenedor del listado de Pokes
         const ulPokemonGrid = document.createElement('ul');
         containment.appendChild(ulPokemonGrid);
