@@ -52,14 +52,21 @@ const typePoke = () => {
   return individual;
 }
 
-
+const filterPokeType = (typePoke) => {
+  let pokeType = POKEMON.pokemon;
+  const tipo = pokeType.filter((element) => {
+      return element.type[0] === typePoke || element.type[1] === typePoke;    
+  });
+  //console.log(tipo);
+  };
+    
 //Filtrados, esto creará un nuevo arreglo "newNumbers", y guardo todos los elementos del arreglo que estoy
 //buscando, cuando se cumpla la condición, en este caso, cuando sean pares.
-/* const numbers = [1,2,3,4,5];
+// const numbers = [1,2,3,4,5];
 
-const newNumbres = numbers.filter((element) => {
-  return element % 2 === 0 ;
-}) */
+// const newNumbres = numbers.filter((element) => {
+//   return element % 2 === 0 ;
+// })
 
 
 const comparar = (pokeOne,pokeTwo) => {
