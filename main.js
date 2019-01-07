@@ -7,9 +7,8 @@ window.onload = () => {
     document.getElementById('btn_enter').addEventListener('click',(event) => {
         document.getElementById('user').innerHTML = '';
         rootContainment.innerHTML = `
-                <article>
+        <article>
             <section id="containmentPokes" class="containment">
-                <!--Aquí van las fotos de cada uno de los pokemones-->
                 <div id = "found">
                 </div>
                 <div id = "middle">
@@ -21,7 +20,15 @@ window.onload = () => {
                 </div>
                 </div>
             </section>
-        </article> `
+        </article> 
+        <!--Aquí van las tarjetas de Pokes-->
+        <div class = "container">
+            <div class="card">
+                <div class="box">
+
+                </div>
+            </div>
+        </div>`
     });
 
     // let user = document.getElementById('user');
