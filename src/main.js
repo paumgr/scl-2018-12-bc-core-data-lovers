@@ -27,12 +27,16 @@ window.onload = () => {
 
         const labelSearch = document.createElement('label');
         const searchText = document.createTextNode('Nombre o Número ');
+        const paragraphInfo = document.createElement('p');
+        const paragraphText = document.createTextNode('Usa la busqueda para encontrar POKÉMON')
         const elementSearch = document.createElement('input');
         const buttonSearch = document.createElement('button');
         labelSearch.appendChild(searchText);
         divSearch.appendChild(labelSearch);
         divSearch.appendChild(elementSearch);
         divSearch.appendChild(buttonSearch);
+        paragraphInfo.appendChild(paragraphText);
+        divSearch.appendChild(paragraphInfo);
         elementSearch.setAttribute('type','text');
         elementSearch.setAttribute('placeholder','Ej: 005, "Charmander", etc.');
         elementSearch.setAttribute('id','searchInputPoke');
