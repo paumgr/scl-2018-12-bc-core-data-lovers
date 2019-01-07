@@ -1,5 +1,5 @@
 #foto{
-    width: 100px;
+    width: 10%;
 }
 
 input[type=checkbox]{
@@ -190,31 +190,42 @@ header .container p{
 }
 
 .pokedex-filter {
-  clear: both;
-  background: #616161;
+  /*clear: both;*/
+  /*background: #bbbbbba8;*/
+  background-color: #919191;
   border-color: #212121;
   border-style: solid;
-  border-width: 1px 0 0 0;
-  overflow: hidden;
+  border-radius: 10%;
+  /*overflow: hidden;*/
   width: 100%;
   display: flex;
+  font-family: Sans-serif;
 }
 
 .pill {
-  border: 2px solid #a4a4a4;
-  border-radius: 5px;
+  /*border: 2px solid #a4a4a4;
+  border-radius: 5px;*/
   line-height: 28px;
   width: 50%;
+<<<<<<< HEAD
   background: #bada55;
+=======
+  /*background: #f39c12;*/
+>>>>>>> ea0fce15bfc9b0a0fd76a3b47dcf4bc002e42b05
   margin: 2.5px;
-  text-align: center;
+  text-align: center;  
 }
+<<<<<<< HEAD
 .span-select-type{
+=======
+
+.spanSelectType{
+>>>>>>> ea0fce15bfc9b0a0fd76a3b47dcf4bc002e42b05
   align-content: center;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .ul-filter-list{
@@ -247,17 +258,28 @@ img{
   width: 65%;
 }
 
-body{
-  background: -webkit-linear-gradient(90deg, #fef882 10%, #f4a62a 70%);
+.bodys{
+  /*background: -webkit-linear-gradient(100deg, #fef882 10%, #f5cea3 70%);*/
+  background-image: url("img/pokemones.png");
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center top;
+  backgroudn-size: contain;
 }
 
-#foto{
-  float: left 50% ;
-}
 
-#login{
+
+/*.nav-item{
+  background: #F2F2F2
+}*/
+
+/*#login{
   width: 20%;
   height: 50%;
   background-color: #cae2e5;
   border-radius: 10px;
+<<<<<<< HEAD
 }
+=======
+}*/
+>>>>>>> ea0fce15bfc9b0a0fd76a3b47dcf4bc002e42b05
