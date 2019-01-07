@@ -4,16 +4,6 @@
 
 // window.dataPokemon = {
 
-
-
-  const filterType= (POKEMON, condition) => {
-    const filteredType = POKEMON.filter(element => {
-      return element.type === condition
-    })
-    return filteredHouse;
-  }; 
-
-/*
   const example = () => {
   return 'example';
 };
