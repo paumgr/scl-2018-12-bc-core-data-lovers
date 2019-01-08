@@ -30,48 +30,8 @@
             data.forEach(element => {
                 // element --> POKEMON[i]
                 //console.log(element.house);
-                if (element.num === '' && element.type === '') {
-                    rootContainment.innerHTML += `
-                <div>
-                  <div class="card">
-                    <div class="box">
-                        <div class="img">
-                           <img src=" ${element.img} ">
-                        </div>
-                      <h2> ${element.name}<br><span>nose</span> </h2>
-                        <p>No Aplica</p>
-                    </div>
-                  </div>
-                </div>`
-                }else if (element.num !== "" & element.type === "") {
-                    rootContainment.innerHTML += `
-                <div>
-                  <div class="card">
-                    <div class="box">
-                        <div class="img">
-                           <img src=" ${element.img} ">
-                        </div>
-                      <h2> ${element.name}<br><span> ${element.num}</span> </h2>
-                        <p>Type: No Aplica</p>
-                    </div>
-                  </div>
-                </div>`
-                }else if (element.num === "" & element.type !== "") {
-                    rootContainment.innerHTML += `
-                <div>
-                  <div class="card">
-                    <div class="box">
-                        <div class="img">
-                           <img src=" ${element.img} ">
-                        </div>
-                      <h2> ${element.name}<br><span>No aplica</span> </h2>
-                        <p> ${element.type}</p>
-                    </div>
-                  </div>
-                </div>`
-                }else {
-                    result = rootContainment.innerHTML += `
-                <div>
+                result = rootContainment.innerHTML += `
+                <div id="flip-container">
                   <div class="card">
                     <div class="box">
                         <div class="img">
@@ -82,7 +42,6 @@
                     </div>
                   </div>
                 </div>`
-                }
             });
             return result;
         } 
