@@ -1,6 +1,7 @@
-window.onload = () => {
+//window.onload = () => {
     let filterPokes = [];
     let arrayShowWhole = wholePokes(); 
+    const data = (POKEMON.pokemon);
     const rootContainment = document.getElementById('root');
 
     //Ingreso con botón Aceptar
@@ -21,11 +22,12 @@ window.onload = () => {
                 </div>
             </section>
         </article> `
+    });
         //Aquí van las tarjetas de Pokes-->
-        const showData = (POKEMON) => {
+        const showData = (data) => {
             let result = '';
             //console.log(POKÉMON)
-            POKEMON.forEach(element => {
+            data.forEach(element => {
                 // element --> POKEMON[i]
                 //console.log(element.house);
                 if (element.num === '' && element.type === '') {
@@ -34,7 +36,7 @@ window.onload = () => {
                   <div class="card">
                     <div class="box">
                         <div class="img">
-                           <img src=" ${element.image} ">
+                           <img src=" ${element.img} ">
                         </div>
                       <h2> ${element.name}<br><span>nose</span> </h2>
                         <p>No Aplica</p>
@@ -47,7 +49,7 @@ window.onload = () => {
                   <div class="card">
                     <div class="box">
                         <div class="img">
-                           <img src=" ${element.image} ">
+                           <img src=" ${element.img} ">
                         </div>
                       <h2> ${element.name}<br><span> ${element.num}</span> </h2>
                         <p>Type: No Aplica</p>
@@ -60,7 +62,7 @@ window.onload = () => {
                   <div class="card">
                     <div class="box">
                         <div class="img">
-                           <img src=" ${element.image} ">
+                           <img src=" ${element.img} ">
                         </div>
                       <h2> ${element.name}<br><span>No aplica</span> </h2>
                         <p> ${element.type}</p>
@@ -73,7 +75,7 @@ window.onload = () => {
                   <div class="card">
                     <div class="box">
                         <div class="img">
-                           <img src=" ${element.image} ">
+                           <img src=" ${element.img} ">
                         </div>
                       <h2> ${element.name}<br><span> ${element.num}</span> </h2>
                         <p>Type: ${element.type}</p>
@@ -85,8 +87,8 @@ window.onload = () => {
             return result;
         } 
 
-    });
- //window.onload = showData(POKEMON);
+    
+ window.onload = showData(data);
 
     // let user = document.getElementById('user');
     // const containment = document.getElementById('containmentPokes');
@@ -225,6 +227,6 @@ window.onload = () => {
         //     hFiveName.appendChild(nombreTextPoke);
         // });
     //});    
-    }
+   //}
 
 
