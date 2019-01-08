@@ -4,16 +4,30 @@
 
 // window.dataPokemon = {
 
-  const example = () => {
-  return 'example';
+const order = (data,status) => {
+  if (status === 'ascendente'){
+    data.sort(function (a,b){
+      if(a.name > b.name){
+        return 1;
+      }
+      if (a.name < b.name){
+        return -1;
+      } 
+      return 0;
+    });
+  } 
+  if(status === 'descentende'){
+    data.sort(function (a,b){
+      if(a.name < b.name){
+        return 1;
+      }
+      if (a.name > b.name){
+        return -1;
+      } 
+      return 0;
+    });
+  } 
 };
-
-// window.example = example;
-
-const searchForID = (pokeId) => {
-  let arrayPokeID = POKEMON["pokemon"][pokeId];
-  return arrayPokeID;
-}
 
 const wholePokes = () => {
   let arrayCompletePoke = POKEMON.pokemon;
@@ -49,16 +63,12 @@ const filterPokeType = (typePoke) => {
   });
   return tipo;
   //console.log(tipo);
-  };
-    
-//Filtrados, esto creará un nuevo arreglo "newNumbers", y guardo todos los elementos del arreglo que estoy
-//buscando, cuando se cumpla la condición, en este caso, cuando sean pares.
-// const numbers = [1,2,3,4,5];
+};
 
-// const newNumbres = numbers.filter((element) => {
-//   return element % 2 === 0 ;
-// })
-
+const searchForID = (pokeId) => {
+  let arrayPokeID = POKEMON["pokemon"][pokeId];
+  return arrayPokeID;
+}
 
 const comparar = (pokeOne,pokeTwo) => {
   //debe traer el id del pokemon a buscar
