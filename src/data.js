@@ -29,8 +29,6 @@ const order = (data,status) => {
   } 
 };
 
-
-
 const typePoke = () => {
   // function onlyUnique(value,index,self){
   //   return self.indexOf(value) === index;
@@ -53,14 +51,14 @@ const typePoke = () => {
   return individual;
 }
 
-const filterPokeType = (typePoke) => {
-  let pokeType = POKEMON.pokemon;
-  const tipo = pokeType.filter((element) => {
-      return element.type[0] === typePoke || element.type[1] === typePoke;    
+const filterPokeType = (data,typePoke) => {
+  // console.log('typePoke ' + typePoke);
+  // console.log('data ' + data);
+  const filtered = data.filter(element => {
+    return element.type.indexOf(typePoke) >= 0;
   });
-  return tipo;
-  //console.log(tipo);
-};
+  return filtered;  
+}
 
 const searchForID = (pokeId) => {
   let arrayPokeID = POKEMON["pokemon"][pokeId];
