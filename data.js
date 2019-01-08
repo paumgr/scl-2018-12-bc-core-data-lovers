@@ -16,12 +16,12 @@ const order = (data,status) => {
       return 0;
     });
   } 
-  if(status === 'descentende'){
-    data.sort(function (a,b){
-      if(a.name < b.name){
+  if(status === 'descendente'){
+    data.reverse(function (a,b){
+      if(a.name > b.name){
         return 1;
       }
-      if (a.name > b.name){
+      if (a.name < b.name){
         return -1;
       } 
       return 0;
@@ -29,10 +29,7 @@ const order = (data,status) => {
   } 
 };
 
-const wholePokes = () => {
-  let arrayCompletePoke = POKEMON.pokemon;
-  return arrayCompletePoke;
-}
+
 
 const typePoke = () => {
   // function onlyUnique(value,index,self){
