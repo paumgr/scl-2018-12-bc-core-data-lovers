@@ -251,7 +251,6 @@ img{
 }
 
 .bodys{
-  /*background: -webkit-linear-gradient(100deg, #fef882 10%, #f5cea3 70%);*/
   background-image: url("img/pokemones.png");
   background-size: 100%;
   background-attachment: fixed;
@@ -271,24 +270,25 @@ img{
   width: 270px;
   height: 270px;
   margin: 1em;
-  background: -webkit-linear-gradient(100deg, #ffffff 30%, #b8b9b8 70%);
+  background: -webkit-linear-gradient(100deg, #b8b9b8 30%, #ffffff 70%);
   box-shadow: 0 20px 50px rgba(0,0,0,.1);
   border-radius: 1em;
   text-align: center;
   align-content: flex-start;
-
   position: relative;
-  transition: 0.6s;
+  transition: .7s;
   transform-style: preserve-3d;
   transform-origin: 100% 25px;
 }
 .card:hover, .card.flip{
-  transform: rotateY(90deg);
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg)
 }
 .card .box {
   text-align: center;
   padding: 1.25em;
   width: 100%;
+  /*-webkit-perspective: 800;*/
 }
 .card .box .img {
   width: 120px;
@@ -319,6 +319,12 @@ img{
   display: inline-flex;
 }
 
+#root {
+  display: block;
+}
+
+
+
 /*.front, .back{
   position: absolute;
   width: 100%;
@@ -337,7 +343,7 @@ img{
   justify-content: center;
 }
 .back{
-  transform: rotateY(90deg);
+  transform: rotateY(180deg);
   background: repeating-linear-gradient(
     -45deg,
     #ececec,
