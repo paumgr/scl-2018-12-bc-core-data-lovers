@@ -1,4 +1,4 @@
-//window.onload = () => {
+window.onload = () => {
     let filterPokes = [];
     let arrayShowWhole = wholePokes(); 
     const data = (POKEMON.pokemon);
@@ -48,6 +48,8 @@
 
     
  window.onload = showData(data);
+
+
 
     // let user = document.getElementById('user');
     // const containment = document.getElementById('containmentPokes');
@@ -186,6 +188,6 @@
         //     hFiveName.appendChild(nombreTextPoke);
         // });
     //});    
-   //}
+   }
 
 
