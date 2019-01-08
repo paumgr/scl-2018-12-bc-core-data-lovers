@@ -4,21 +4,30 @@
 
 // window.dataPokemon = {
 
-  const example = () => {
-  return 'example';
+const order = (data,status) => {
+  if (status === 'ascendente'){
+    data.sort(function (a,b){
+      if(a.name > b.name){
+        return 1;
+      }
+      if (a.name < b.name){
+        return -1;
+      } 
+      return 0;
+    });
+  } 
+  if(status === 'descendente'){
+    data.reverse(function (a,b){
+      if(a.name > b.name){
+        return 1;
+      }
+      if (a.name < b.name){
+        return -1;
+      } 
+      return 0;
+    });
+  } 
 };
-
-// window.example = example;
-
-const searchForID = (pokeId) => {
-  let arrayPokeID = POKEMON["pokemon"][pokeId];
-  return arrayPokeID;
-}
-
-const wholePokes = () => {
-  let arrayCompletePoke = POKEMON.pokemon;
-  return arrayCompletePoke;
-}
 
 const typePoke = () => {
   // function onlyUnique(value,index,self){
@@ -42,22 +51,19 @@ const typePoke = () => {
   return individual;
 }
 
-const filterPokeType = (typePoke) => {
-  let pokeType = POKEMON.pokemon;
-  const tipo = pokeType.filter((element) => {
-      return element.type[0] === typePoke || element.type[1] === typePoke;    
+const filterPokeType = (data,typePoke) => {
+  // console.log('typePoke ' + typePoke);
+  // console.log('data ' + data);
+  const filtered = data.filter(element => {
+    return element.type.indexOf(typePoke) >= 0;
   });
-  //console.log(tipo);
-  };
-    
-//Filtrados, esto creará un nuevo arreglo "newNumbers", y guardo todos los elementos del arreglo que estoy
-//buscando, cuando se cumpla la condición, en este caso, cuando sean pares.
-// const numbers = [1,2,3,4,5];
+  return filtered;  
+}
 
-// const newNumbres = numbers.filter((element) => {
-//   return element % 2 === 0 ;
-// })
-
+const searchForID = (pokeId) => {
+  let arrayPokeID = POKEMON["pokemon"][pokeId];
+  return arrayPokeID;
+}
 
 const comparar = (pokeOne,pokeTwo) => {
   //debe traer el id del pokemon a buscar
