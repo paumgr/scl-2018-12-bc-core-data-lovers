@@ -186,16 +186,6 @@ header .container p{
   margin-left: 10px;
 }
 
-.ul-filter-list{
-  float: left;
-  width: 100%;
-  columns:2;
-  height:300px;
-  padding: 0px;
-  margin: 0px;
-  vertical-align: baseline;
-}
-
 .filter-column-div{
   clear: both;
   justify-content: space-between;
