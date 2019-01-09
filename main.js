@@ -1,8 +1,4 @@
 
-<<<<<<< HEAD
-=======
-let filterPokes = [];
->>>>>>> e6c1fcb4ddfcc5d57c66c344157fe1d110880741
     
 const data = (POKEMON.pokemon);
 const rootContainment = document.getElementById('root');
@@ -36,24 +32,23 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                 </div>
             <div/>
             </div>
-            <div id = "box-filter-order">    
+            <div id = "box-filter-order">
                 <div id = "filter" class = "container container-span" >
-                    <span id="Bug"> Insecto </span>
-                    <span id="Dragon"> Dragon </span>
-                    <span id="Electric"> Electrico </span>
-                    <span id="Fighting"> Peleador </span>
-                    <span id="Fire"> Fuego </span>
-                    <span id="Flying"> Volador </span>
-                    <span id="Ghost"> Fantasma </span>
-                    <span id="Grass"> Hierba </span>
-                    <span id="Ground"> Tierra </span>
-                    <span id="Ice"> Hielo </span>
-                    <span id="Normal">Normal </span>
-                    <span id="Poison"> Veneno </span>
-                    <span id="Psychic"> Psíquico </span>
-                    <span id="Rock"> Roca </span>
-                    <span id = "Water"> Agua </span>
-            
+                    <span class="span-filter" id="Bug"> Insecto </span>
+                    <span class="span-filter" id="Dragon"> Dragon </span>
+                    <span class="span-filter" id="Electric"> Electrico </span>
+                    <span class="span-filter" id="Fighting"> Peleador </span>
+                    <span class="span-filter" id="Fire"> Fuego </span>
+                    <span class="span-filter" id="Flying"> Volador </span>
+                    <span class="span-filter" id="Ghost"> Fantasma </span>
+                    <span class="span-filter" id="Grass"> Hierba </span>
+                    <span class="span-filter" id="Ground"> Tierra </span>
+                    <span class="span-filter" id="Ice"> Hielo </span>
+                    <span class="span-filter" id="Normal">Normal </span>
+                    <span class="span-filter" id="Poison"> Veneno </span>
+                    <span class="span-filter" id="Psychic"> Psíquico </span>
+                    <span class="span-filter" id="Rock"> Roca </span>
+                    <span class="span-filter" id = "Water"> Agua </span>
         </section>
         </article> 
       `
@@ -62,16 +57,17 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
     let valueSpan = '';
     let spanSelectedType;
 
-    spanSelectedType = document.getElementsByClass('span-filter');
-    // spanSelectedType = document.getElementById('Rock');
-    // spanSelectedType = document.getElementById('Psychic');
-    spanSelectedType.addEventListener('click',(event) => {
-        event.preventDefault();
-        console.log('entro');
-        valueSpan = spanSelectedType.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-        
+    spanSelectedType = document.getElementsByClassName('span-filter');
+    spanSelectedType.forEach(element => {
+        element.addEventListener('click',(event) => {
+            event.preventDefault();
+            console.log('entro');
+            valueSpan = element.id;
+            filterPk = filterPokeType(data,valueSpan);
+            filterPokeByType(filterPk);
+            
+        });
+
     });
 
     // let spanSelectedType = document.getElementById('Water');
@@ -95,90 +91,90 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
     //     filterPokeByType(filterPk);
     // })
 
-    let spanSelectedPoison = document.getElementById('Poison');
-    spanSelectedPoison.addEventListener('click',() => {
-        valueSpan = spanSelectedPoison.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedPoison = document.getElementById('Poison');
+    // spanSelectedPoison.addEventListener('click',() => {
+    //     valueSpan = spanSelectedPoison.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
 
-    let spanSelectedNormal = document.getElementById('Normal');
-    spanSelectedNormal.addEventListener('click',() => {
-        valueSpan = spanSelectedNormal.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedNormal = document.getElementById('Normal');
+    // spanSelectedNormal.addEventListener('click',() => {
+    //     valueSpan = spanSelectedNormal.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
 
-    let spanSelectedIce = document.getElementById('Ice');
-    spanSelectedIce.addEventListener('click',() => {
-        valueSpan = spanSelectedIce.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedIce = document.getElementById('Ice');
+    // spanSelectedIce.addEventListener('click',() => {
+    //     valueSpan = spanSelectedIce.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
 
-    let spanSelectedGround = document.getElementById('Ground');
-    spanSelectedGround.addEventListener('click',() => {
-        valueSpan = spanSelectedGround.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedGround = document.getElementById('Ground');
+    // spanSelectedGround.addEventListener('click',() => {
+    //     valueSpan = spanSelectedGround.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
 
-    let spanSelectedGras = document.getElementById('Grass');
-    spanSelectedGras.addEventListener('click',() => {
-        valueSpan = spanSelectedGras.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedGras = document.getElementById('Grass');
+    // spanSelectedGras.addEventListener('click',() => {
+    //     valueSpan = spanSelectedGras.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
     
-    let spanSelectedGhost = document.getElementById('Ghost');
-    spanSelectedGhost.addEventListener('click',() => {
-        valueSpan = spanSelectedGhost.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedGhost = document.getElementById('Ghost');
+    // spanSelectedGhost.addEventListener('click',() => {
+    //     valueSpan = spanSelectedGhost.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
 
-    let spanSelectedFlying = document.getElementById('Flying');
-    spanSelectedFlying.addEventListener('click',() => {
-        valueSpan = spanSelectedFlying.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedFlying = document.getElementById('Flying');
+    // spanSelectedFlying.addEventListener('click',() => {
+    //     valueSpan = spanSelectedFlying.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
 
-    let spanSelectedFire = document.getElementById('Fire');
-    spanSelectedFire.addEventListener('click',() => {
-        valueSpan = spanSelectedFire.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);   
-    })
+    // let spanSelectedFire = document.getElementById('Fire');
+    // spanSelectedFire.addEventListener('click',() => {
+    //     valueSpan = spanSelectedFire.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);   
+    // })
 
-    let spanSelectedFighting = document.getElementById('Fighting');
-    spanSelectedFighting.addEventListener('click',() => {
-        valueSpan = spanSelectedFighting.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedFighting = document.getElementById('Fighting');
+    // spanSelectedFighting.addEventListener('click',() => {
+    //     valueSpan = spanSelectedFighting.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
 
-    let spanSelectedElectric = document.getElementById('Electric');
-    spanSelectedElectric.addEventListener('click',() => {
-        valueSpan = spanSelectedElectric.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedElectric = document.getElementById('Electric');
+    // spanSelectedElectric.addEventListener('click',() => {
+    //     valueSpan = spanSelectedElectric.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
 
     
-    let spanSelectedDragon = document.getElementById('Dragon');
-    spanSelectedDragon.addEventListener('click',() => {
-        valueSpan = spanSelectedDragon.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedDragon = document.getElementById('Dragon');
+    // spanSelectedDragon.addEventListener('click',() => {
+    //     valueSpan = spanSelectedDragon.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
     
-    let spanSelectedBug = document.getElementById('Bug');
-    spanSelectedBug.addEventListener('click',() => {
-        valueSpan = spanSelectedBug.id;
-        filterPk = filterPokeType(data,valueSpan);
-        filterPokeByType(filterPk);
-    })
+    // let spanSelectedBug = document.getElementById('Bug');
+    // spanSelectedBug.addEventListener('click',() => {
+    //     valueSpan = spanSelectedBug.id;
+    //     filterPk = filterPokeType(data,valueSpan);
+    //     filterPokeByType(filterPk);
+    // })
     
     function filterPokeByType (typeToFilter) {
         rootContainment.innerHTML = '';
