@@ -22,6 +22,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             </div>
             <div class"order">
                 <div class="container container-order">
+                 <p>Ordena Pokemones</p>
                     <select id="order">
                         <option value="0">Seleccione</option> 
                         <option value="ascendente">A - Z</option> 
@@ -30,6 +31,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                 </div>
             <div/>
             </div>
+        </section>
             <div id = "box-filter-order">
                 <div id = "filter" class = "container container-span" >
                     <span class="span-filter" id="Bug"> Insecto </span>
@@ -47,7 +49,6 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                     <span class="span-filter" id="Psychic"> Psíquico </span>
                     <span class="span-filter" id="Rock"> Roca </span>
                     <span class="span-filter" id = "Water"> Agua </span>
-        </section>
         </article>
       `
     //Filtrado
@@ -59,7 +60,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             rootContainment.innerHTML = '';
             filterPokeType(data,valueSpan).forEach(element => {
                 rootContainment.innerHTML += `
-                <div id="flip-container">
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
                     <div class="card">
                     <div class="box">
                         <div class="img">
@@ -95,8 +96,10 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
         rootContainment.innerHTML = '';
         data.forEach(element => {
             rootContainment.innerHTML += `
-            <div id="flip-container">
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
                 <div class="card">
+                <div class="front"></div>
+                <div class="back"></div>
                 <div class="box">
                     <div class="img">
                         <img src=" ${element.img} ">
