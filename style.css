@@ -1,5 +1,9 @@
 #foto{
-    width: 10%;
+  width: 10%;
+}
+
+img{
+  width: 65%;
 }
 
 ul {
@@ -49,6 +53,17 @@ figure{
   background: #F2F2F2;  
 }
 
+.bodys{
+  background-image: url("img/pokemones.png");
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  font-family: "Flexo-Regular",arial,sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+/*barra de busqueda*/
 .search-div{
   flex-flow: row wrap;
   justify-content: center;
@@ -56,8 +71,46 @@ figure{
   text-align: center;
   display: flex;
   align-items: center;
+  display: inline-block;
 }
 
+.search-div .middle-o .container-order{
+  /*clear: both;*/
+  /*background: #bbbbbba8;*/
+  height: 300px;
+  background-color: #919191;
+  border-color: #212121;
+  border-style: solid;
+  border-radius: 10px;
+  /*overflow: hidden;*/
+  width: 100%;
+  display: flex;
+  font-family: Sans-serif;
+  display: inline-block;
+}
+
+/*spans*/
+.container-span{
+  clear: both;
+  justify-content: space-between;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  float:left;
+  position: relative;
+  margin: 1em 0 0 0;
+  padding: 10px;
+  display: inline-block;
+  /*border-radius: 10px;*/
+}
+
+
+/*Color letras de input de busqueda*/
+#id-poke-search{
+  color: black;
+}
+
+/*Boton lupa de busqueda*/
 .button-search {
   background-image: url(../src/img/search.png);
   background-position: center;
@@ -76,18 +129,16 @@ figure{
   display: inline-block;
 }
 
-.id {
-  font-family: "Flexo-Bold",arial,sans-serif;
-  color: #919191;
-  font-size: 80%;
+#box-filter-order {
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+   display: inline-block;
 }
 
-body {
-  font-family: "Flexo-Regular",arial,sans-serif;
-  font-size: 16px;
-  color: #fff;
-}
-
+/*Me deja titulo al centro*/
 .title{
   color: #333333;
   cursor: default;
@@ -98,7 +149,6 @@ body {
   margin:auto;
 }
 
-
 .container{
   width: 90%;
   max-width: 1000px;
@@ -107,10 +157,10 @@ body {
   display: flex;
   flex-flow:row wrap;
 }
+
 header{
   width: 100%;
   padding: 20px;
-
   /* Flex */
   display: flex;
   justify-content: space-between;
@@ -149,24 +199,13 @@ header .container p{
   background-color: #a4a4a4;
   color: #fff;
   margin: 10px;
+  border-radius: 10px;
 }
 
 .colors{
   background: green;
 }
 
-.pokedex-filter {
-  /*clear: both;*/
-  /*background: #bbbbbba8;*/
-  background-color: #919191;
-  border-color: #212121;
-  border-style: solid;
-  border-radius: 10%;
-  /*overflow: hidden;*/
-  width: 100%;
-  display: flex;
-  font-family: Sans-serif;
-}
 
 .pill {
   /*border: 2px solid #a4a4a4;
@@ -178,73 +217,82 @@ header .container p{
   text-align: center;  
 }
 
-.spanSelectType{
-  align-content: center;
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 10px;
-}
-
-.filter-column-div{
-  clear: both;
-  justify-content: space-between;
-  align-content: center;
-  text-align: center;
-  display: block;
-  align-items: center;
-  float:left;
-  position: relative;
-  margin: 1em 0 0 0;
-}
-
 .paragraph{
     font-family: Sans-serif;
 }
 
-img{
-  width: 65%;
-}
-
-.bodys{
-  /*background: -webkit-linear-gradient(100deg, #fef882 10%, #f5cea3 70%);*/
-  background-image: url("img/pokemones.png");
-  background-size: 100%;
-  background-attachment: fixed;
-  background-position: center top;
-  background-size: cover;
-}
-
-.container-fluid {
-  display: flex;
-  flex-direction: row;
-  align-content: flex-end;
-  flex-wrap: wrap;
-  align-items: baseline;
+#flip-container{
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  padding: 50px;
+  position: relative;
+  margin: 10px auto;
+  width: 500px;
 }
 
 .card {
   width: 270px;
   height: 270px;
   margin: 1em;
-  background: -webkit-linear-gradient(100deg, #ffffff 30%, #b8b9b8 70%);
+  background: -webkit-linear-gradient(100deg, #b8b9b8 30%, #ffffff 70%);
   box-shadow: 0 20px 50px rgba(0,0,0,.1);
   border-radius: 1em;
   text-align: center;
   align-content: flex-start;
-
   position: relative;
-  transition: 0.6s;
+  transition: transform 0.4s;
   transform-style: preserve-3d;
-  transform-origin: 100% 25px;
 }
+
+.front, .back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  text-align: center;
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 4em;
+  padding: 15px;
+  box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.front{
+  z-index: 2;
+  color: #FFF;
+  font: 1em/1.8em Arial;
+  display: flex;
+  align-items: center;
+}
+.back{
+  transform: rotateY(180deg) perspective(600px); 
+  background: repeating-linear-gradient(
+    -45deg,
+    #ececec,
+    #ececec 10px,
+    #dedede 10px,
+    #dedede 20px
+  );
+  padding: 15px
+  /*-webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );*/
+}
+
 .card:hover, .card.flip{
-  transform: rotateY(90deg);
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg)
 }
 .card .box {
   text-align: center;
   padding: 1.25em;
   width: 100%;
+  /*-webkit-perspective: 800;*/
 }
 .card .box .img {
   width: 120px;
@@ -275,30 +323,3 @@ img{
   display: inline-flex;
 }
 
-/*.front, .back{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  text-align: center;
-}
-.front{
-  transform: rotateX(0deg);
-  z-index: 2;
-  color: #FFF;
-  font: 1em/1.8em Arial;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.back{
-  transform: rotateY(90deg);
-  background: repeating-linear-gradient(
-    -45deg,
-    #ececec,
-    #ececec 10px,
-    #dedede 10px,
-    #dedede 20px
-  );
-}*/

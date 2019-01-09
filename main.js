@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+let filterPokes = [];
+>>>>>>> e6c1fcb4ddfcc5d57c66c344157fe1d110880741
     
 const data = (POKEMON.pokemon);
 const rootContainment = document.getElementById('root');
@@ -10,7 +14,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
     document.getElementById('user').innerHTML = '';
     menuContainment.innerHTML = `
     <article>
-        <section id="containmentPokes" class="containment">
+        <section id="containmentPokes" class="containment containment-pokes">
         <!--Aquí va el menú de la página de Pokes-->
             <div id = "found" class = "search-div">
               <label>Nombre o Número</label>
@@ -18,38 +22,37 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
               <button type="submit" value = "search" id="search" class="button button-search"></button>
               <p>Usa la busqueda para encontrar POKÉMON</p>
             </div>
-            <div id = "middle">
+            <div id = "middle" class="middle-o">
                 <span><h5>O</h5></span>
             </div> 
-            
-            <div id = "box-filter-order">    
-                <div id = "filter" class = "container" >
-                    <span class="span-filter" id="Bug"> Insecto </span>
-                    <span class="span-filter" id="Dragon"> Dragon </span>
-                    <span class="span-filter"  id="Electric"> Electrico </span>
-                    <span class="span-filter"  id="Fighting"> Peleador </span>
-                    <span class="span-filter"  id="Fire"> Fuego </span>
-                    <span class="span-filter"  id="Flying"> Volador </span>
-                    <span class="span-filter"  id="Ghost"> Fantasma </span>
-                    <span class="span-filter"  id="Grass"> Hierba </span>
-                    <span class="span-filter"  id="Ground"> Tierra </span>
-                    <span class="span-filter"  id="Ice"> Hielo </span>
-                    <span class="span-filter"  id="Normal">Normal </span>
-                    <span class="span-filter"  id="Poison"> Veneno </span>
-                    <span class="span-filter"  id="Psychic"> Psíquico </span>
-                    <span class="span-filter"  id="Rock"> Roca </span>
-                    <span class="span-filter" id= "Water"> Agua </span>
-                </div>
-                <section class="container">
+            </div>
+            <div class"order">
+                <div class="container container-order">
                     <select id="order">
                         <option value="0">Seleccione</option> 
                         <option value="ascendente">A - Z</option> 
                         <option value="descendente">Z - A</option>
-                        <option value="menor">Menor a mayor</option>
-                        <option value="mayor">Mayor a menor</option>
                     </select>
-                </section>
+                </div>
+            <div/>
             </div>
+            <div id = "box-filter-order">    
+                <div id = "filter" class = "container container-span" >
+                    <span id="Bug"> Insecto </span>
+                    <span id="Dragon"> Dragon </span>
+                    <span id="Electric"> Electrico </span>
+                    <span id="Fighting"> Peleador </span>
+                    <span id="Fire"> Fuego </span>
+                    <span id="Flying"> Volador </span>
+                    <span id="Ghost"> Fantasma </span>
+                    <span id="Grass"> Hierba </span>
+                    <span id="Ground"> Tierra </span>
+                    <span id="Ice"> Hielo </span>
+                    <span id="Normal">Normal </span>
+                    <span id="Poison"> Veneno </span>
+                    <span id="Psychic"> Psíquico </span>
+                    <span id="Rock"> Roca </span>
+                    <span id = "Water"> Agua </span>
             
         </section>
         </article> 
@@ -242,5 +245,3 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
     window.onload = showData(data);
 });
     
-
-
