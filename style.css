@@ -2,9 +2,13 @@
   width: 10%;
 }
 
-img{
+.img-fluid{
   width: 65%;
 }
+
+/*.img-go{
+  width: 20%;
+}*/
 
 ul {
   list-style: none;
@@ -74,7 +78,7 @@ figure{
   display: inline-block;
 }
 
-.search-div .middle-o .container-order{
+.containment-pokes{
   /*clear: both;*/
   /*background: #bbbbbba8;*/
   height: 300px;
@@ -87,23 +91,14 @@ figure{
   display: flex;
   font-family: Sans-serif;
   display: inline-block;
-}
 
-/*spans*/
-.container-span{
-  clear: both;
-  justify-content: space-between;
-  align-content: center;
-  text-align: center;
-  align-items: center;
-  float:left;
+  justify-content:center;
+  display: flex;
   position: relative;
-  margin: 1em 0 0 0;
-  padding: 10px;
-  display: inline-block;
-  /*border-radius: 10px;*/
+	margin-left:50px;
+	margin-top:-150px;
+  padding:30px;
 }
-
 
 /*Color letras de input de busqueda*/
 #id-poke-search{
@@ -135,7 +130,7 @@ figure{
   display: flex;
   flex-wrap: wrap;
   margin-left: 10px;
-   display: inline-block;
+  display: inline-block;
 }
 
 /*Me deja titulo al centro*/
@@ -194,32 +189,48 @@ header .container p{
   width: 100%;
   margin:auto;
 }
-
+/*Boton ingresar*/
 .btn{
+  width: 20%;
+  height: 20%;
   background-color: #a4a4a4;
   color: #fff;
   margin: 10px;
   border-radius: 10px;
-}
-
-.colors{
-  background: green;
-}
-
-
-.pill {
-  /*border: 2px solid #a4a4a4;
-  border-radius: 5px;*/
-  line-height: 28px;
-  width: 50%;
-  /*background: #f39c12;*/
-  margin: 2.5px;
-  text-align: center;  
+  float: left;
 }
 
 .paragraph{
     font-family: Sans-serif;
 }
+
+/*spans*/
+.span-filter{
+  background-color: #919191;
+  border-radius: 10px;
+  border-color: #212121;
+  border-style: solid;
+  border-radius: 10px;
+  text-align: center;
+  width: 20%;
+  height: 20%;
+  margin :auto; 
+}
+
+.container-span{
+  justify-content:center;
+  display: flex;
+  position: relative;
+	margin-left:50px;
+	margin-top:-150px;
+  padding:30px;
+}
+
+/*.container-fluid{
+display: grid;
+grid-template-columns: auto auto auto;
+padding: 10px;
+}*/
 
 #flip-container{
   -webkit-perspective: 1000px;
@@ -233,16 +244,17 @@ header .container p{
 .card {
   width: 270px;
   height: 270px;
-  margin: 1em;
   background: -webkit-linear-gradient(100deg, #b8b9b8 30%, #ffffff 70%);
   box-shadow: 0 20px 50px rgba(0,0,0,.1);
-  border-radius: 1em;
+  border-radius: 10px;
   text-align: center;
   align-content: flex-start;
   position: relative;
-  transition: transform 0.4s;
+  transition: 0.6s;
   transform-style: preserve-3d;
+  margin: 1em;
 }
+
 
 .front, .back{
   position: absolute;
@@ -259,29 +271,29 @@ header .container p{
   font-size: 4em;
   padding: 15px;
   box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
 }
 
 .front{
+  transform: rotateY(0deg);
   z-index: 2;
   color: #FFF;
   font: 1em/1.8em Arial;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .back{
   transform: rotateY(180deg) perspective(600px); 
   background: repeating-linear-gradient(
-    -45deg,
+    45deg,
     #ececec,
     #ececec 10px,
     #dedede 10px,
     #dedede 20px
   );
   padding: 15px
-  /*-webkit-transform: rotateY( 180deg );
-  -moz-transform: rotateY( 180deg );
-  -o-transform: rotateY( 180deg );
-  transform: rotateY( 180deg );*/
 }
 
 .card:hover, .card.flip{
