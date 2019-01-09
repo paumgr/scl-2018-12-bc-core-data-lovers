@@ -1,5 +1,3 @@
-
-    
 const data = (POKEMON.pokemon);
 const rootContainment = document.getElementById('root');
 const menuContainment = document.getElementById('menu');
@@ -50,153 +48,37 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                     <span class="span-filter" id="Rock"> Roca </span>
                     <span class="span-filter" id = "Water"> Agua </span>
         </section>
-        </article> 
+        </article>
       `
     //Filtrado
-    let filterPk = [];
-    let valueSpan = '';
-    let spanSelectedType;
-
-    spanSelectedType = document.getElementsByClassName('span-filter');
-    spanSelectedType.forEach(element => {
+    spanValueFilter = Array.from(document.getElementsByClassName('span-filter'))
+    spanValueFilter.forEach(function(element){
         element.addEventListener('click',(event) => {
             event.preventDefault();
-            console.log('entro');
-            valueSpan = element.id;
-            filterPk = filterPokeType(data,valueSpan);
-            filterPokeByType(filterPk);
-            
-        });
-
-    });
-
-    // let spanSelectedType = document.getElementById('Water');
-    // spanSelectedWater.addEventListener('click',() => {
-    //     valueSpan = spanSelectedWater.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-
-    // let spanSelectedRock = document.getElementById('Rock');
-    // spanSelectedRock.addEventListener('click',() => {
-    //     valueSpan = spanSelectedRock.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-    
-    // let spanSelectedPsychic = document.getElementById('Psychic');
-    // spanSelectedPsychic.addEventListener('click',() => {
-    //     valueSpan = spanSelectedPsychic.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-
-    // let spanSelectedPoison = document.getElementById('Poison');
-    // spanSelectedPoison.addEventListener('click',() => {
-    //     valueSpan = spanSelectedPoison.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-
-    // let spanSelectedNormal = document.getElementById('Normal');
-    // spanSelectedNormal.addEventListener('click',() => {
-    //     valueSpan = spanSelectedNormal.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-
-    // let spanSelectedIce = document.getElementById('Ice');
-    // spanSelectedIce.addEventListener('click',() => {
-    //     valueSpan = spanSelectedIce.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-
-    // let spanSelectedGround = document.getElementById('Ground');
-    // spanSelectedGround.addEventListener('click',() => {
-    //     valueSpan = spanSelectedGround.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-
-    // let spanSelectedGras = document.getElementById('Grass');
-    // spanSelectedGras.addEventListener('click',() => {
-    //     valueSpan = spanSelectedGras.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-    
-    // let spanSelectedGhost = document.getElementById('Ghost');
-    // spanSelectedGhost.addEventListener('click',() => {
-    //     valueSpan = spanSelectedGhost.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-
-    // let spanSelectedFlying = document.getElementById('Flying');
-    // spanSelectedFlying.addEventListener('click',() => {
-    //     valueSpan = spanSelectedFlying.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-
-    // let spanSelectedFire = document.getElementById('Fire');
-    // spanSelectedFire.addEventListener('click',() => {
-    //     valueSpan = spanSelectedFire.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);   
-    // })
-
-    // let spanSelectedFighting = document.getElementById('Fighting');
-    // spanSelectedFighting.addEventListener('click',() => {
-    //     valueSpan = spanSelectedFighting.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-
-    // let spanSelectedElectric = document.getElementById('Electric');
-    // spanSelectedElectric.addEventListener('click',() => {
-    //     valueSpan = spanSelectedElectric.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-
-    
-    // let spanSelectedDragon = document.getElementById('Dragon');
-    // spanSelectedDragon.addEventListener('click',() => {
-    //     valueSpan = spanSelectedDragon.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-    
-    // let spanSelectedBug = document.getElementById('Bug');
-    // spanSelectedBug.addEventListener('click',() => {
-    //     valueSpan = spanSelectedBug.id;
-    //     filterPk = filterPokeType(data,valueSpan);
-    //     filterPokeByType(filterPk);
-    // })
-    
-    function filterPokeByType (typeToFilter) {
-        rootContainment.innerHTML = '';
-        typeToFilter.forEach(element => {
-            rootContainment.innerHTML += `
-            <div id="flip-container">
-                <div class="card">
-                <div class="box">
-                    <div class="img">
-                        <img src=" ${element.img} ">
+            let valueSpan = element.id;
+            rootContainment.innerHTML = '';
+            filterPokeType(data,valueSpan).forEach(element => {
+                rootContainment.innerHTML += `
+                <div id="flip-container">
+                    <div class="card">
+                    <div class="box">
+                        <div class="img">
+                            <img src=" ${element.img} ">
+                        </div>
+                        <h2> ${element.name}<br><span> ${element.num}</span> </h2>
+                        <p>Type: ${element.type}</p>
                     </div>
-                    <h2> ${element.name}<br><span> ${element.num}</span> </h2>
-                    <p>Type: ${element.type}</p>
-                </div>
-                </div>
-            </div>`
-        });        
-    };
+                    </div>
+                </div>`
+            });        
+        });
+    });
+    
+    //Orden por nombre
     const orderList = document.getElementById('order');
     orderList.addEventListener('change', () => {
         let status = orderList.options[orderList.selectedIndex].value;
-        let orderName = order(POKEMON.pokemon,status);
+        order(POKEMON.pokemon,status);
         // limpio div
         rootContainment.innerHTML = '';
 
