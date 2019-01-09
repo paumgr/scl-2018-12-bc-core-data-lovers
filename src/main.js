@@ -79,10 +79,21 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
     orderList.addEventListener('change', () => {
         let status = orderList.options[orderList.selectedIndex].value;
         order(POKEMON.pokemon,status);
+        createCardPoke();
+    });
+    
+    //Aquí van las tarjetas de Pokes-->
+    const showData = (data) => {
+        let result = '';
+        //console.log(POKÉMON)
+        createCardPoke();
+        return result;
+    } 
+
+    function createCardPoke(){
         // limpio div
         rootContainment.innerHTML = '';
-
-        POKEMON.pokemon.forEach(element => {
+        data.forEach(element => {
             rootContainment.innerHTML += `
             <div id="flip-container">
                 <div class="card">
@@ -96,30 +107,8 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                 </div>
             </div>`
         });        
-    });
-    
-    //Aquí van las tarjetas de Pokes-->
-    const showData = (data) => {
-        let result = '';
-        //console.log(POKÉMON)
-        data.forEach(element => {
-            // element --> POKEMON[i]
-            //console.log(element.house);
-            result = rootContainment.innerHTML += `
-            <div id="flip-container">
-                <div class="card">
-                <div class="box">
-                    <div class="img">
-                        <img src=" ${element.img} ">
-                    </div>
-                    <h2> ${element.name}<br><span> ${element.num}</span> </h2>
-                    <p>Type: ${element.type}</p>
-                </div>
-                </div>
-            </div>`
-        });
-        return result;
-    } 
+        
+    }
     window.onload = showData(data);
 });
     
