@@ -60,17 +60,25 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             rootContainment.innerHTML = '';
             filterPokeType(data,valueSpan).forEach(element => {
                 rootContainment.innerHTML += `
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
-                    <div class="card">
-                    <div class="box">
-                        <div class="img">
-                            <img src=" ${element.img} ">
-                        </div>
-                        <h2> ${element.name}<br><span> ${element.num}</span> </h2>
-                        <p>Type: ${element.type}</p>
+                <div class="target col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
+                <div class="card">
+                <div class="front"></div>
+                <div class="box">
+                    <div class="img">
+                        <img src=" ${element.img} ">
                     </div>
-                    </div>
-                </div>`
+                    <h2> ${element.name}<br><span> ${element.num}</span> </h2>
+                    <p>Type: ${element.type}</p>
+                </div>
+                <div class="back">
+                 <p> #: ${element.num}</p>
+                 <p>Altura: ${element.height}</p>
+                 <p>Peso: ${element.weight}</p>
+                 <p>Tipo: ${element.type}</p>
+                 <p>Debilidad con Pókemon tipo: ${element.weaknesses}</p>
+                </div>
+                </div>
+            </div>`
             });        
         });
     });
