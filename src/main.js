@@ -2,23 +2,6 @@ const data = (POKEMON.pokemon);
 const rootContainment = document.getElementById('root');
 const menuContainment = document.getElementById('menu');
 
-
-
-
-
-
-
-
-
-
-//estadística
-document.getElementById('pills-stadictics-tab').addEventListener('click',(event) => {
-    event.preventDefault();
-    // rootContainment.innerHTML = '';
-    menuContainment.innerHTML = '';
-    rootContainment.innerHTML = '';
-});
-
 //Ingreso con botón Aceptar
 document.getElementById('btn_enter').addEventListener('click',(event) => {
     event.preventDefault();
@@ -39,7 +22,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             </div>
             <div class"order">
                 <div class="container container-order">
-                    <select id="order">
+                    <select id="order" class = "order">
                         <option value="0">Ordena pokemones por...</option> 
                         <option value="ascendente">A - Z</option> 
                         <option value="descendente">Z - A</option>

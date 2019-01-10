@@ -125,9 +125,10 @@ figure{
 
 /*spans*/
 .span-filter{
-  background-color: #919191;
+  background-color: #ee6b2f;
+  cursor: pointer;
   border-radius: 10px;
-  border-color: #212121;
+  border-color: #A03200;
   border-style: solid;
   border-radius: 10px;
   text-align: center;
@@ -334,5 +335,11 @@ header .container p{
 }
 .card .box span {
   display: inline-flex;
+}
+
+.order{
+  color : #333333;
+  border-radius: 10%;
+
 }
 
