@@ -3,7 +3,27 @@
 
 // window.dataPokemon = {
 const order = (data,status) => {
-  if (status === 'ascendente'){
+  if (status === 'less'){
+    data.sort(function (a,b){
+      if(a.num > b.num){
+        return 1;
+      }
+      if (a.num < b.num){
+        return -1;
+      } 
+      return 0;
+    });
+  }else if(status === 'major'){
+    data.reverse(function (a,b){
+      if(a.num > b.num){
+        return 1;
+      }
+      if (a.num < b.num){
+        return -1;
+      } 
+      return 0;
+    });
+  }else if (status === 'upward'){
     data.sort(function (a,b){
       if(a.name > b.name){
         return 1;
@@ -13,8 +33,7 @@ const order = (data,status) => {
       } 
       return 0;
     });
-  } 
-  if(status === 'descendente'){
+  } else if(status === 'falling'){
     data.reverse(function (a,b){
       if(a.name > b.name){
         return 1;
@@ -25,7 +44,7 @@ const order = (data,status) => {
       return 0;
     });
   } 
-};
+}
 
 const typePoke = () => {
   let pokeTypeAll = POKEMON.pokemon
