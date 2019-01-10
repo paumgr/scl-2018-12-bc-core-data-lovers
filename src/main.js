@@ -50,6 +50,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                     <span class="span-filter" id="Psychic"> Psíquico </span>
                     <span class="span-filter" id="Rock"> Roca </span>
                     <span class="span-filter" id = "Water"> Agua </span>
+                    <span class="span-filter" id = "All"> Todos </span>
                 </div>
                 <div>
                     <span id = "calc"></span>
@@ -63,11 +64,17 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
         element.addEventListener('click',(event) => {
             event.preventDefault();
             let valueSpan = element.id;
-            rootContainment.innerHTML = '';
-            let calculation = probability(data,valueSpan).toFixed(3);
-            document.getElementById('calc').innerHTML = 'Tienes ' + calculation + ' problabilidad de encontrar un pokemón, tipo '+ valueSpan;
-            let dataFilter = filterPokeType(data,valueSpan);
-            createCardPoke(dataFilter);        
+            if (valueSpan === 'All'){
+                document.getElementById('calc').innerHTML = '';
+                createCardPoke(data);
+            } else {
+                let valueSpain = element.innerHTML;
+                rootContainment.innerHTML = '';
+                let calculation = probability(data,valueSpan).toFixed(3);
+                document.getElementById('calc').innerHTML = 'Tienes un ' + calculation + '% de problabilidad de encontrar un pokemón, tipo '+ valueSpain;
+                let dataFilter = filterPokeType(data,valueSpan);
+                createCardPoke(dataFilter);
+            }
         });
     });
     
