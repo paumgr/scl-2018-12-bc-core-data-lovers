@@ -24,10 +24,10 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                 <div class="container container-order">
                     <select id="order" class = "order">
                         <option value="0">Ordena pokemones por...</option> 
-                        <option value="ascendente">A - Z</option> 
-                        <option value="descendente">Z - A</option>
-                        <option value="menor">Menor núm ID (Primero)</option>
-                        <option value="mayor">Mayor núm ID (Primero) </option>
+                        <option value="upward">A - Z</option> 
+                        <option value="falling">Z - A</option>
+                        <option value="less">Menor núm ID (Primero)</option>
+                        <option value="major">Mayor núm ID (Primero) </option>
                     </select>
                 </div>
             <div/>
