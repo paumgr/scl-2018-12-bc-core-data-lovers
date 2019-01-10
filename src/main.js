@@ -22,11 +22,12 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             </div>
             <div class"order">
                 <div class="container container-order">
-                 <p>Ordena Pokemones</p>
-                    <select id="order">
-                        <option value="0">Seleccione</option> 
+                    <select id="order" class = "order">
+                        <option value="0">Ordena pokemones por...</option> 
                         <option value="ascendente">A - Z</option> 
                         <option value="descendente">Z - A</option>
+                        <option value="menor">Menor núm ID (Primero)</option>
+                        <option value="mayor">Mayor núm ID (Primero) </option>
                     </select>
                 </div>
             <div/>
@@ -49,6 +50,11 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                     <span class="span-filter" id="Psychic"> Psíquico </span>
                     <span class="span-filter" id="Rock"> Roca </span>
                     <span class="span-filter" id = "Water"> Agua </span>
+                </div>
+                <div>
+                    <span id = "calc"></span>
+                </div
+            </div>
         </article>
       `
     //Filtrado
@@ -58,28 +64,10 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             event.preventDefault();
             let valueSpan = element.id;
             rootContainment.innerHTML = '';
-            filterPokeType(data,valueSpan).forEach(element => {
-                rootContainment.innerHTML += `
-                <div class="target col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
-                <div class="card">
-                <div class="front"></div>
-                <div class="box">
-                    <div class="img">
-                        <img src=" ${element.img} ">
-                    </div>
-                    <h2> ${element.name}<br><span> ${element.num}</span> </h2>
-                    <p>Type: ${element.type}</p>
-                </div>
-                <div class="back">
-                 <p> #: ${element.num}</p>
-                 <p>Altura: ${element.height}</p>
-                 <p>Peso: ${element.weight}</p>
-                 <p>Tipo: ${element.type}</p>
-                 <p>Debilidad con Pókemon tipo: ${element.weaknesses}</p>
-                </div>
-                </div>
-            </div>`
-            });        
+            let calculation = probability(data,valueSpan).toFixed(3);
+            document.getElementById('calc').innerHTML = 'Tienes ' + calculation + ' problabilidad de encontrar un pokemón, tipo '+ valueSpan;
+            let dataFilter = filterPokeType(data,valueSpan);
+            createCardPoke(dataFilter);        
         });
     });
     
@@ -88,21 +76,20 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
     orderList.addEventListener('change', () => {
         let status = orderList.options[orderList.selectedIndex].value;
         order(POKEMON.pokemon,status);
-        createCardPoke();
+        createCardPoke(data);
     });
     
     //Aquí van las tarjetas de Pokes-->
     const showData = (data) => {
         let result = '';
-        //console.log(POKÉMON)
-        createCardPoke();
+        createCardPoke(data);
         return result;
     } 
 
-    function createCardPoke(){
+    function createCardPoke(dataToFiltered){
         // limpio div
         rootContainment.innerHTML = '';
-        data.forEach(element => {
+        dataToFiltered.forEach(element => {
             rootContainment.innerHTML += `
             <div class="target col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
                 <div class="card">
@@ -124,7 +111,6 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                 </div>
             </div>`
         });        
-        
     }
     window.onload = showData(data);
 });
