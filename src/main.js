@@ -26,6 +26,8 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                         <option value="0">Seleccione</option> 
                         <option value="ascendente">A - Z</option> 
                         <option value="descendente">Z - A</option>
+                        <option value="menor">Menor núm ID (Primero)</option>
+                        <option value="mayor">Mayor núm ID (Primero) </option>
                     </select>
                 </div>
             <div/>
@@ -57,20 +59,8 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             event.preventDefault();
             let valueSpan = element.id;
             rootContainment.innerHTML = '';
-            filterPokeType(data,valueSpan).forEach(element => {
-                rootContainment.innerHTML += `
-                <div id="flip-container">
-                    <div class="card">
-                    <div class="box">
-                        <div class="img">
-                            <img src=" ${element.img} ">
-                        </div>
-                        <h2> ${element.name}<br><span> ${element.num}</span> </h2>
-                        <p>Type: ${element.type}</p>
-                    </div>
-                    </div>
-                </div>`
-            });        
+            let dataFiltered = filterPokeType(data,valueSpan)
+            createCardPoke(dataFiltered);
         });
     });
     
@@ -79,21 +69,20 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
     orderList.addEventListener('change', () => {
         let status = orderList.options[orderList.selectedIndex].value;
         order(POKEMON.pokemon,status);
-        createCardPoke();
+        createCardPoke(data);
     });
     
     //Aquí van las tarjetas de Pokes-->
     const showData = (data) => {
         let result = '';
-        //console.log(POKÉMON)
-        createCardPoke();
+        createCardPoke(data);
         return result;
     } 
 
-    function createCardPoke(){
+    function createCardPoke(dataToFiltered){
         // limpio div
         rootContainment.innerHTML = '';
-        data.forEach(element => {
+        dataToFiltered.forEach(element => {
             rootContainment.innerHTML += `
             <div id="flip-container">
                 <div class="card">
@@ -107,7 +96,6 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                 </div>
             </div>`
         });        
-        
     }
     window.onload = showData(data);
 });
