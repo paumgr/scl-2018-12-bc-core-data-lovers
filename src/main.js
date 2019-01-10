@@ -2,6 +2,23 @@ const data = (POKEMON.pokemon);
 const rootContainment = document.getElementById('root');
 const menuContainment = document.getElementById('menu');
 
+
+
+
+
+
+
+
+
+
+//estadística
+document.getElementById('pills-stadictics-tab').addEventListener('click',(event) => {
+    event.preventDefault();
+    // rootContainment.innerHTML = '';
+    menuContainment.innerHTML = '';
+    rootContainment.innerHTML = '';
+});
+
 //Ingreso con botón Aceptar
 document.getElementById('btn_enter').addEventListener('click',(event) => {
     event.preventDefault();
@@ -22,9 +39,8 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             </div>
             <div class"order">
                 <div class="container container-order">
-                 <p>Ordena Pokemones</p>
                     <select id="order">
-                        <option value="0">Seleccione</option> 
+                        <option value="0">Ordena pokemones por...</option> 
                         <option value="ascendente">A - Z</option> 
                         <option value="descendente">Z - A</option>
                         <option value="menor">Menor núm ID (Primero)</option>
@@ -51,6 +67,11 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                     <span class="span-filter" id="Psychic"> Psíquico </span>
                     <span class="span-filter" id="Rock"> Roca </span>
                     <span class="span-filter" id = "Water"> Agua </span>
+                </div>
+                <div>
+                    <span id = "calc"></span>
+                </div
+            </div>
         </article>
       `
     //Filtrado
@@ -60,9 +81,10 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             event.preventDefault();
             let valueSpan = element.id;
             rootContainment.innerHTML = '';
+            let calculation = probability(data,valueSpan).toFixed(3);
+            document.getElementById('calc').innerHTML = 'Tienes ' + calculation + ' problabilidad de encontrar un pokemón, tipo '+ valueSpan;
             let dataFilter = filterPokeType(data,valueSpan);
             createCardPoke(dataFilter);        
-            
         });
     });
     
