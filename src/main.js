@@ -22,6 +22,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             </div>
             <div class"order">
                 <div class="container container-order">
+                 <p>Ordena Pokemones</p>
                     <select id="order">
                         <option value="0">Seleccione</option> 
                         <option value="ascendente">A - Z</option> 
@@ -32,6 +33,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                 </div>
             <div/>
             </div>
+        </section>
             <div id = "box-filter-order">
                 <div id = "filter" class = "container container-span" >
                     <span class="span-filter" id="Bug"> Insecto </span>
@@ -49,7 +51,6 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                     <span class="span-filter" id="Psychic"> Psíquico </span>
                     <span class="span-filter" id="Rock"> Roca </span>
                     <span class="span-filter" id = "Water"> Agua </span>
-        </section>
         </article>
       `
     //Filtrado
@@ -59,8 +60,9 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             event.preventDefault();
             let valueSpan = element.id;
             rootContainment.innerHTML = '';
-            let dataFiltered = filterPokeType(data,valueSpan)
-            createCardPoke(dataFiltered);
+            let dataFilter = filterPokeType(data,valueSpan);
+            createCardPoke(dataFilter);        
+            
         });
     });
     
@@ -84,14 +86,22 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
         rootContainment.innerHTML = '';
         dataToFiltered.forEach(element => {
             rootContainment.innerHTML += `
-            <div id="flip-container">
+            <div class="target col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
                 <div class="card">
+                <div class="front"></div>
                 <div class="box">
                     <div class="img">
                         <img src=" ${element.img} ">
                     </div>
                     <h2> ${element.name}<br><span> ${element.num}</span> </h2>
                     <p>Type: ${element.type}</p>
+                </div>
+                <div class="back">
+                 <p> #: ${element.num}</p>
+                 <p>Altura: ${element.height}</p>
+                 <p>Peso: ${element.weight}</p>
+                 <p>Tipo: ${element.type}</p>
+                 <p>Debilidad con Pókemon tipo: ${element.weaknesses}</p>
                 </div>
                 </div>
             </div>`
