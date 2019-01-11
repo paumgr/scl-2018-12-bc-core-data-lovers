@@ -2,9 +2,13 @@ const data = (POKEMON.pokemon);
 const rootContainment = document.getElementById('root');
 const menuContainment = document.getElementById('menu');
 
+
+
 //Ingreso con botón Aceptar
 document.getElementById('btn_enter').addEventListener('click',(event) => {
     event.preventDefault();
+    let loginName = document.getElementById('login').value;
+    document.getElementById('insert-name').innerHTML = 'Hola ' + loginName;
     document.getElementById('user').innerHTML = '';
     menuContainment.innerHTML = `
     <article>
@@ -98,6 +102,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             </div>` 
         }
     });
+
     //Filtrado
     spanValueFilter = Array.from(document.getElementsByClassName('span-filter'))
     spanValueFilter.forEach(function(element){
