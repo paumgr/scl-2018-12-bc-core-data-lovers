@@ -136,7 +136,7 @@ h5{
   background-color: #ee6b2f;
   cursor: pointer;
   border-radius: 10px;
-  border-color: #A03200;
+  border-color: black;
   border-style: solid;
   border-radius: 10px;
   text-align: center;
@@ -262,10 +262,6 @@ header .container p{
   padding: 15px;
   box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 .front{
@@ -281,7 +277,7 @@ header .container p{
   transform: rotateY(180deg) perspective(600px); 
   background: -webkit-linear-gradient(80deg, 		Aquamarine 30%,	#20B2AA 70%);
   -webkit-transform: perspective(600px) rotateY(180deg);
-	padding: 15px;
+	padding: 20px;
 	-webkit-box-pack:center;
 	-webkit-justify-content:center;
 	-ms-flex-pack: center;
@@ -294,12 +290,12 @@ header .container p{
 	-webkit-text-align:center;
 	color: #fff;
 	font-family: "Sans-serif";
-	font-size: 90%;
+	font-size: 120%;
 }
 
 .card:hover, .card.flip{
   transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg)
+  backface-visibility: hidden;
 }
 
 .card .box {
