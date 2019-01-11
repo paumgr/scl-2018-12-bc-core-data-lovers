@@ -105,7 +105,7 @@ h5{
   display: flex inline-block;
   font-family: Sans-serif;
   justify-content:center;
-  margin-left: 27%;
+  margin: auto;
   text-align: center;
   padding: 40px;
 }
