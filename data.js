@@ -2,6 +2,8 @@
 // puedes ver como agregamos la función a nuestro objeto global window
 
 // window.dataPokemon = {
+
+//ordena los pokemons por nombre y número
 const order = (data,status) => {
   if (status === 'less'){
     data.sort(function (a,b){
@@ -65,18 +67,24 @@ const typePoke = () => {
   return individual;
 }
 
+//Filtra pokemon por tipo
 const filterPokeType = (data,typePoke) => {
-  const filtered = data.filter(element => {
-    return element.type.indexOf(typePoke) >= 0;
-  });
+  const filtered = data.filter(element => {return element.type.indexOf(typePoke) >= 0;});
   return filtered;  
 }
 
-const searchForID = (pokeId) => {
-  let arrayPokeID = POKEMON["pokemon"][pokeId];
-  return arrayPokeID;
+const searchFor = (data, pokeParameter) => {
+  const finding = data.filter(element => {return element.num.indexOf(pokeParameter) >= 0;});
+  console.log(typeof finding);
+  if (finding[0] === undefined){
+    const finding = data.filter(element => {return element.name.indexOf(pokeParameter) >= 0;});
+    console.log(typeof finding);
+    return finding;
+  }
+  return finding;
 }
 
+//Calcula probabilidad de aparición por tipo
 const probability = (data, type) => {
   let calculo = data.filter((element) => {return element.type.indexOf(type) >= 0})
   .reduce((acum,element)=> {return acum + element.spawn_chance},0);

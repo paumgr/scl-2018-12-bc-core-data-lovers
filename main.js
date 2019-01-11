@@ -58,6 +58,46 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             </div>
         </article>
       `
+
+    //Buscar por nombre e ID    
+    document.getElementById('search').addEventListener('click',(event) => {
+        event.preventDefault();        
+        let valueToFind = document.getElementById('id-poke-search').value;
+        let find = searchFor(data,valueToFind);
+        if (find[0] === undefined){
+            rootContainment.innerHTML = '';
+            rootContainment.innerHTML = `
+                <div class="target col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
+                    <div class="card">
+                    <div class="box">
+                        <p>¡Ups! No se ha encontrado</p>
+                    </div>
+                    </div>
+                </div>` 
+            }else {
+        rootContainment.innerHTML = '';
+        rootContainment.innerHTML = `
+            <div class="target col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
+                <div class="card">
+                <div class="front"></div>
+                <div class="box">
+                    <div class="img">
+                        <img src=" ${find[0].img} ">
+                    </div>
+                    <h2> ${find[0].name}<br><span> ${find[0].num}</span> </h2>
+                    <p>Type: ${find[0].type}</p>
+                </div>
+                <div class="back">
+                 <p> #: ${find[0].num}</p>
+                 <p>Altura: ${find[0].height}</p>
+                 <p>Peso: ${find[0].weight}</p>
+                 <p>Tipo: ${find[0].type}</p>
+                 <p>Debilidad con Pókemon tipo: ${find[0].weaknesses}</p>
+                </div>
+                </div>
+            </div>` 
+        }
+    });
     //Filtrado
     spanValueFilter = Array.from(document.getElementsByClassName('span-filter'))
     spanValueFilter.forEach(function(element){
