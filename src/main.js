@@ -9,7 +9,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
     event.preventDefault();
     let loginName = document.getElementById('login').value;
     if (loginName === ''){
-        document.getElementById('insert-name').innerHTML = 'Hola Sin Nombre';
+        document.getElementById('insert-name').innerHTML = 'Hola PokeJugador';
     }else{
         document.getElementById('insert-name').innerHTML = 'Hola ' + loginName; }
     document.getElementById('user').innerHTML = '';

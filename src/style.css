@@ -1,3 +1,11 @@
+.container-responsive{
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-flow:row wrap;
+  
+}
 #foto{
   width: 10%;
 }
@@ -5,6 +13,34 @@
 .img-fluid{
   width: 65%;
 }
+.bodys{
+  background-image: url("img/pokemones.png");
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  font-family: "Flexo-Regular",arial,sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+/*Saludo*/
+#insert-name{
+  color: rgb(12, 12, 11);
+  font-size: 250%;
+  line-height: 125%;
+  font-family: "Flexo-Regular",arial,sans-serif;
+  margin:auto;
+  display: block;
+  text-align: center;
+  width: 65%;
+}
+
+/*Prepara batalla*/
+.paragraph{
+  font-family:Sans-serif ;
+  color: rgb(12, 12, 11);
+}
+
 
 /*Me deja titulo al centro*/
 .title{
@@ -28,10 +64,7 @@
   float: left;
 }
 
-/*.img-go{
-  width: 20%;
-}*/
-
+/*cotenido menu*/
 label {
   font-family: "Flexo-Regular",arial,sans-serif;
   float: left;
@@ -39,42 +72,16 @@ label {
   text-transform: none;
   color: #fff;
   display: flex;
+  text-align: center;
 }
 
-.results li h5 {
-  font-family: "Flexo-Demi",arial,sans-serif;
-  color: #313131;
-  text-transform: none;
-  font-size: 145%;
-  margin-bottom: 5px;
-}
-.results li{
-  clear: both;
-  position: relative;
-  top: -5px;
-  padding-left: 7.2525%;
-}
 h5{
   font-size: 20px;
   margin-bottom: 5px;
   margin: 0.5em 0;
-  color: #333333;
+  color: #fffdfd;
 }
 
-figure{
-  background: #F2F2F2;  
-}
-
-.bodys{
-  background-image: url("img/pokemones.png");
-  background-size: 100%;
-  background-attachment: fixed;
-  background-position: center top;
-  background-size: cover;
-  font-family: "Flexo-Regular",arial,sans-serif;
-  font-size: 16px;
-  color: #fff;
-}
 /*barra de busqueda*/
 .search-div{
   flex-flow: row wrap;
@@ -102,6 +109,7 @@ figure{
   justify-content:center;
   margin-left: 29%;
   text-align: center;
+  padding: 40px;
 }
 
 /*Boton lupa de busqueda*/
@@ -208,30 +216,21 @@ header .container p{
   margin:auto
 }
 
-.paragraph{
-    font-family:Sans-serif ;
-}
-
-/*#flip-container{
+#flip-container{
   -webkit-perspective: 1000px;
   perspective: 1000px;
   padding: 50px;
   position: relative;
   margin: 10px auto;
   width: 500px;
-}*/
+  background-color: white;
 
-/*.card.flipped {
-  -webkit-transform: rotateY( 180deg );
-  -moz-transform: rotateY( 180deg );
-  -o-transform: rotateY( 180deg );
-  transform: rotateY( 180deg );
-  }*/
+}
 
 .card {
   width: 270px;
   height: 270px;
-  background: -webkit-linear-gradient(80deg, 	#00CED1 30%, #20B2AA 70%);
+  background: -webkit-linear-gradient(80deg, 		Aquamarine 30%,	#20B2AA 70%);
   box-shadow: 0 20px 50px rgba(0,0,0,.1);
   border-radius: 10px;
   text-align: center;
@@ -240,7 +239,7 @@ header .container p{
   transition: 0.6s;
   transform-style: preserve-3d;
   max-width:1100px;
-	margin: 20px auto;
+	margin: 1em;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
@@ -280,7 +279,7 @@ header .container p{
 }
 .back{
   transform: rotateY(180deg) perspective(600px); 
-  background: -webkit-linear-gradient(80deg, 	#00CED1 30%, #20B2AA 70%);
+  background: -webkit-linear-gradient(80deg, 		Aquamarine 30%,	#20B2AA 70%);
   -webkit-transform: perspective(600px) rotateY(180deg);
 	padding: 15px;
 	-webkit-box-pack:center;
@@ -298,10 +297,11 @@ header .container p{
 	font-size: 90%;
 }
 
-.card:hover{
+.card:hover, .card.flip{
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg)
 }
+
 .card .box {
   text-align: center;
   padding: 1.25em;
@@ -343,3 +343,51 @@ header .container p{
 
 }
 
+#Bug{
+  background-color: #A8B820;
+}
+#Dragon{
+  background-color: #7860E0;
+}
+#Electric{
+  background-color: #F8D030;
+}
+#Fighting{
+  background-color: #A05038;
+}
+#Fire{
+  background-color: #F05030;
+}
+#Flying{
+  background-color:	#98A8F0;
+}
+#Ghost{
+  background-color: #6060B0;
+}
+#Grass{
+  background-color: #78C850;
+}
+#Ground{
+  background-color: rgb(158, 103, 66);
+}
+#Ice{
+  background-color: #58C8E0;
+}
+#Normal{
+  background-color:	#A8A090;
+}
+#Poison{
+  background-color: #B058A0;
+}
+#Psychic{
+  background-color: #F870A0	;
+}
+#Rock{
+  background-color: #B8A058;
+}
+#Water{
+  background-color: #3899F8;
+}
+#All{
+  background: -webkit-linear-gradient(80deg, 	#00CED1 30%, #20B2AA 70%);;
+}
