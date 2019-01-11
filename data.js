@@ -85,6 +85,8 @@ const searchFor = (data, pokeParameter) => {
 }
 
 //Calcula probabilidad de aparición por tipo
+//google.charts.load('current', {'packages':['corechart']});
+  //    google.charts.setOnLoadCallback(drawChart);
 const probability = (data, type) => {
   let calculo = data.filter((element) => {return element.type.indexOf(type) >= 0})
   .reduce((acum,element)=> {return acum + element.spawn_chance},0);
