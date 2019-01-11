@@ -8,7 +8,10 @@ const menuContainment = document.getElementById('menu');
 document.getElementById('btn_enter').addEventListener('click',(event) => {
     event.preventDefault();
     let loginName = document.getElementById('login').value;
-    document.getElementById('insert-name').innerHTML = 'Hola ' + loginName;
+    if (loginName === ''){
+        document.getElementById('insert-name').innerHTML = 'Hola Sin Nombre';
+    }else{
+        document.getElementById('insert-name').innerHTML = 'Hola ' + loginName; }
     document.getElementById('user').innerHTML = '';
     menuContainment.innerHTML = `
     <article>
