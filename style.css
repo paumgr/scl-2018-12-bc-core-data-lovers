@@ -97,7 +97,7 @@ h5{
 .containment-pokes{
   /*clear: both;*/
   height: 300px;
-  background-color: #919191;
+  background: -webkit-linear-gradient(80deg, 		Aquamarine 30%,	#20B2AA 70%);
   border-color: #212121;
   border-style: solid;
   border-radius: 10px;
@@ -107,7 +107,7 @@ h5{
   font-family: Sans-serif;
   display: inline-block;
   justify-content:center;
-  margin-left: 29%;
+  margin-left: 27%;
   text-align: center;
   padding: 40px;
 }
@@ -288,9 +288,9 @@ header .container p{
 	align-items: center;
 	text-align:center;
 	-webkit-text-align:center;
-	color: #fff;
+	color: black;
 	font-family: "Sans-serif";
-	font-size: 120%;
+	font-size: 100%;
 }
 
 .card:hover, .card.flip{
@@ -336,7 +336,10 @@ header .container p{
 .order{
   color : #333333;
   border-radius: 10%;
+}
 
+#calc{
+  color: black;
 }
 
 #Bug{
