@@ -2,9 +2,16 @@ const data = (POKEMON.pokemon);
 const rootContainment = document.getElementById('root');
 const menuContainment = document.getElementById('menu');
 
+
+
 //Ingreso con botón Aceptar
 document.getElementById('btn_enter').addEventListener('click',(event) => {
     event.preventDefault();
+    let loginName = document.getElementById('login').value;
+    if (loginName === ''){
+        document.getElementById('insert-name').innerHTML = 'Hola Sin Nombre';
+    }else{
+        document.getElementById('insert-name').innerHTML = 'Hola ' + loginName; }
     document.getElementById('user').innerHTML = '';
     menuContainment.innerHTML = `
     <article>
@@ -24,10 +31,10 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                 <div class="container container-order">
                     <select id="order" class = "order">
                         <option value="0">Ordena pokemones por...</option> 
-                        <option value="ascendente">A - Z</option> 
-                        <option value="descendente">Z - A</option>
-                        <option value="menor">Menor núm ID (Primero)</option>
-                        <option value="mayor">Mayor núm ID (Primero) </option>
+                        <option value="upward">A - Z</option> 
+                        <option value="falling">Z - A</option>
+                        <option value="less">Menor núm ID (Primero)</option>
+                        <option value="major">Mayor núm ID (Primero) </option>
                     </select>
                 </div>
             <div/>
@@ -50,6 +57,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                     <span class="span-filter" id="Psychic"> Psíquico </span>
                     <span class="span-filter" id="Rock"> Roca </span>
                     <span class="span-filter" id = "Water"> Agua </span>
+                    <span class="span-filter" id = "All"> Todos </span>
                 </div>
                 <div>
                     <span id = "calc"></span>
@@ -57,17 +65,64 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
             </div>
         </article>
       `
+
+    //Buscar por nombre e ID    
+    document.getElementById('search').addEventListener('click',(event) => {
+        event.preventDefault();        
+        let valueToFind = document.getElementById('id-poke-search').value;
+        let find = searchFor(data,valueToFind);
+        if (find[0] === undefined){
+            rootContainment.innerHTML = '';
+            rootContainment.innerHTML = `
+                <div class="target col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
+                    <div class="card">
+                    <div class="box">
+                        <p>¡Ups! No se ha encontrado</p>
+                    </div>
+                    </div>
+                </div>` 
+            }else {
+        rootContainment.innerHTML = '';
+        rootContainment.innerHTML = `
+            <div class="target col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6">
+                <div class="card">
+                <div class="front"></div>
+                <div class="box">
+                    <div class="img">
+                        <img src=" ${find[0].img} ">
+                    </div>
+                    <h2> ${find[0].name}<br><span> ${find[0].num}</span> </h2>
+                    <p>Type: ${find[0].type}</p>
+                </div>
+                <div class="back">
+                 <p> #: ${find[0].num}</p>
+                 <p>Altura: ${find[0].height}</p>
+                 <p>Peso: ${find[0].weight}</p>
+                 <p>Tipo: ${find[0].type}</p>
+                 <p>Debilidad con Pókemon tipo: ${find[0].weaknesses}</p>
+                </div>
+                </div>
+            </div>` 
+        }
+    });
+
     //Filtrado
     spanValueFilter = Array.from(document.getElementsByClassName('span-filter'))
     spanValueFilter.forEach(function(element){
         element.addEventListener('click',(event) => {
             event.preventDefault();
             let valueSpan = element.id;
-            rootContainment.innerHTML = '';
-            let calculation = probability(data,valueSpan).toFixed(3);
-            document.getElementById('calc').innerHTML = 'Tienes ' + calculation + ' problabilidad de encontrar un pokemón, tipo '+ valueSpan;
-            let dataFilter = filterPokeType(data,valueSpan);
-            createCardPoke(dataFilter);        
+            if (valueSpan === 'All'){
+                document.getElementById('calc').innerHTML = '';
+                createCardPoke(data);
+            } else {
+                let valueSpain = element.innerHTML;
+                rootContainment.innerHTML = '';
+                let calculation = probability(data,valueSpan).toFixed(3);
+                document.getElementById('calc').innerHTML = 'Tienes un ' + calculation + '% de problabilidad de encontrar un pokemón, tipo '+ valueSpain;
+                let dataFilter = filterPokeType(data,valueSpan);
+                createCardPoke(dataFilter);
+            }
         });
     });
     
