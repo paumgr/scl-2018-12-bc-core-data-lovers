@@ -99,6 +99,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                  <p>Altura: ${find[0].height}</p>
                  <p>Peso: ${find[0].weight}</p>
                  <p>Tipo: ${find[0].type}</p>
+                 <p>Posibilidad de encontrarlo: ${element.spawn_chance}</p>
                  <p>Debilidad con Pókemon tipo: ${find[0].weaknesses}</p>
                 </div>
                 </div>
@@ -161,6 +162,7 @@ document.getElementById('btn_enter').addEventListener('click',(event) => {
                  <p>Altura: ${element.height}</p>
                  <p>Peso: ${element.weight}</p>
                  <p>Tipo: ${element.type}</p>
+                 <p>Posibilidad de encontrarlo: ${element.spawn_chance}</p>
                  <p>Debilidad con Pókemon tipo: ${element.weaknesses}</p>
                 </div>
                 </div>
